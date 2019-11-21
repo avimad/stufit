@@ -1,0 +1,99 @@
+<mat-card>
+    <mat-horizontal-stepper #stepper>
+        <mat-step>
+            <ng-template matStepLabel>General</ng-template>
+            <app-general-info></app-general-info>
+            <div>
+                <button mat-raised-button color="primary" matStepperNext>Next</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>ANT</ng-template>
+                <app-anthropometry></app-anthropometry>
+
+                <!-- <mat-form-field>
+              <input matInput placeholder="Address" formControlName="secondCtrl" required>
+            </mat-form-field> -->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>E&V</ng-template>
+                <!-- <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+              </mat-form-field> -->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>D&O</ng-template>
+                <!-- <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+              </mat-form-field> -->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>A&ST</ng-template>
+                <!-- <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+              </mat-form-field> -->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>N-A</ng-template>
+                <!-- <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+              </mat-form-field> -->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>PAM</ng-template>
+                <!-- <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+              </mat-form-field> -->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>GAM</ng-template>
+                <!-- <mat-form-field>
+                <input matInput placeholder="Address" formControlName="secondCtrl" required>
+              </mat-form-field> -->
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </form>
+        </mat-step>
+
+    </mat-horizontal-stepper>
+
+</mat-card>

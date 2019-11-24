@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatFormFieldModule, MatInputModule, MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatRadioModule, MatTableModule } from '@angular/material';
 import { GeneralInfoComponent } from './components/general-info/general-info.component';
 
 import { AngularFireModule } from '@angular/fire';
@@ -25,6 +25,8 @@ import { AudiomentryComponent } from './components/audiomentry/audiomentry.compo
 import { NutritionalComponent } from './components/nutritional/nutritional.component';
 import { PschycologicalComponent } from './components/pschycological/pschycological.component';
 import { GeneralAssesmentComponent } from './components/general-assesment/general-assesment.component';
+
+
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -59,7 +61,12 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,36 +1,105 @@
-<mat-card-title>Child Info</mat-card-title>
+<mat-card-title>Child Record</mat-card-title>
 <mat-card-content>
     <form>
         <div class="row">
-            <div class="col-md-6 example-container">
+          <div class="col-md-6 example-container">
                 <mat-form-field>
                     <input matInput placeholder="Name">
                 </mat-form-field>
+            </div>
+        </div>
+
+            <div class="row">
+                <div class="col-md-6 example-container">
+                <mat-form-field>
+                  <input matInput placeholder="Stufit ID:">
+              </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 example-container">
                 <mat-form-field>
                     <input matInput placeholder="Mother's Name">
                 </mat-form-field>
+                </div>
+                 </div>
+
+            <div class="row">
+                <div class="col-md-6 example-container">
                 <mat-form-field>
                     <input matInput placeholder="Father's Name">
                 </mat-form-field>
+              </div>
             </div>
-            <div class="col-md-6 example-container">
+
+            <div class="row">
+            <div class="col-md-3 example-container">
                 <mat-form-field>
-                    <input matInput placeholder="Date of Birth">
+                    <input matInput [matDatepicker]="picker" placeholder="Choose a Date of Birth">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 example-container">
+                    <mat-label>Address:</mat-label>
+                      <textarea>
+                          </textarea>
+
+                </div>
+            </div>
+
+                <div class="row">
+                    <div class="col-md-6 example-container">
                 <mat-form-field>
                     <input matInput placeholder="Email">
                 </mat-form-field>
-                <mat-form-field>
-                    <input matInput placeholder="Phone No.">
-                </mat-form-field>
-            </div>
-            <div class="col-md-12 example-container">
-                <mat-form-field>
-                    <textarea matInput placeholder="Address">
-                        </textarea>
-                </mat-form-field>
+                    </div>
+                </div>
 
+                <div class="row">
+                    <div class="col-md-4 example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Phone No. Father">
+                </mat-form-field>
             </div>
-        </div>
+            <div class="col-md-4 example-container">
+                <mat-form-field>
+                    <input matInput placeholder="Phone No. Mother">
+                </mat-form-field>
+            </div>
+                </div>
+
+                <mat-label>Name of Sibling(s) Studying in the school: </mat-label>
+                <div class="row ">
+
+                  <div class="col-md-6 example-container">
+                           <mat-form-field>
+                          <input matInput placeholder="1.">
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-6 example-container">
+                        <mat-form-field>
+                       <input matInput placeholder="Class/Sec.">
+                   </mat-form-field>
+                 </div>
+                </div>
+                <div class="row ">
+
+                    <div class="col-md-6 example-container">
+                             <mat-form-field>
+                            <input matInput placeholder="2.">
+                        </mat-form-field>
+                      </div>
+                      <div class="col-md-6 example-container">
+                          <mat-form-field>
+                         <input matInput placeholder="Class/Sec.">
+                     </mat-form-field>
+                   </div>
+                  </div>
+
     </form>
 </mat-card-content>

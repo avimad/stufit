@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { PdfService } from '../services/pdf.service';
 
 @Component({
   selector: 'app-general-info',
@@ -7,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralInfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pdfService: PdfService) { }
 
+  @ViewChild('general', { static: false }) general: ElementRef;
   ngOnInit() {
   }
 

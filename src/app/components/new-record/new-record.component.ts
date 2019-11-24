@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { General } from 'src/app/models/general';
 import { StufitService } from '../services/stufit.service';
+import { PdfService } from '../services/pdf.service';
 
 @Component({
   selector: 'app-new-record',
@@ -11,7 +12,7 @@ export class NewRecordComponent implements OnInit {
 
   general: General = {};
 
-  constructor(private service: StufitService) { }
+  constructor(private service: StufitService, private pdfService: PdfService) { }
 
   ngOnInit() {
   }
@@ -24,5 +25,9 @@ export class NewRecordComponent implements OnInit {
       });
     });
   }
+  createPdf() {
+    this.pdfService.makePdf(this.general);
+  }
+
 
 }

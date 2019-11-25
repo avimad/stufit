@@ -1,22 +1,22 @@
 <mat-card-title>ANTHROPOMETRY - 17 Parameters</mat-card-title>
 <mat-card-content>
-  <form>
+  <form [formGroup]="anhthropometryForm">
       <div class="row">
       <div class="col-md-4 example-container">
         <mat-form-field>
-          <input matInput placeholder="Height">
+          <input matInput placeholder="Height" formControlName="height">
           <span matSuffix>Ft</span>
         </mat-form-field>
       </div>
       <div class="col-md-4 example-container">
         <mat-form-field>
-          <input matInput placeholder="Weight">
+          <input matInput placeholder="Weight" formControlName="weight">
           <span matSuffix>Kg</span>
         </mat-form-field>
       </div>
       <div class="col-md-4 example-container">
         <mat-form-field>
-          <input matInput placeholder="BMI">
+          <input matInput placeholder="BMI" formControlName="bmi">
           <span matSuffix>Kg/m <sup>2</sup></span>
         </mat-form-field>
       </div>
@@ -26,12 +26,12 @@
       <div class="row">
         <div class="col-md-3 example-container ">
           <mat-form-field>
-            <input matInput placeholder="Blood Pressure">
+            <input matInput placeholder="Blood Pressure" formControlName="bloodpressure">
           </mat-form-field>
         </div>
         <div class="col-md-3 example-container ">
           <mat-form-field>
-            <input matInput placeholder="Pulse Rate">
+            <input matInput placeholder="Pulse Rate" formControlName="pulserate">
           </mat-form-field>
         </div>
       </div>
@@ -41,7 +41,7 @@
         <mat-label>Posture: </mat-label>
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Posture: ">
+        <mat-radio-group aria-label="Posture: " formControlName="posture">
           <mat-radio-button value="1">Good </mat-radio-button>
           <mat-radio-button value="2">Normal </mat-radio-button>
           <mat-radio-button value="3">Worst </mat-radio-button>
@@ -54,7 +54,7 @@
 
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Posture: ">
+        <mat-radio-group aria-label="Posture: " formControlName="shoulderrange">
           <mat-radio-button value="1">Normal </mat-radio-button>
           <mat-radio-button value="2">Restricted </mat-radio-button>
           <mat-radio-button value="3">Hyper Moves </mat-radio-button>
@@ -68,7 +68,7 @@
       </div>
       <div class="col-md-9 example-container">
 
-        <mat-radio-group aria-label="Posture: ">
+        <mat-radio-group aria-label="Posture: " formControlName="neckrange">
           <mat-radio-button value="1">Normal </mat-radio-button>
           <mat-radio-button value="2">Restricted </mat-radio-button>
           <mat-radio-button value="3">Hyper Moves </mat-radio-button>
@@ -81,7 +81,7 @@
 
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Posture: ">
+        <mat-radio-group aria-label="Posture: " formControlName="rtneckrange">
           <mat-radio-button value="1">Normal </mat-radio-button>
           <mat-radio-button value="2">Restricted </mat-radio-button>
           <mat-radio-button value="3">Hyper Moves </mat-radio-button>
@@ -96,7 +96,7 @@
       </div>
       <div class="col-md-9 example-container">
 
-        <mat-radio-group aria-label="Posture: ">
+        <mat-radio-group aria-label="Posture: " formControlName="ltneckrange">
           <mat-radio-button value="1">Normal </mat-radio-button>
           <mat-radio-button value="2">Restricted </mat-radio-button>
           <mat-radio-button value="3">Hyper Moves </mat-radio-button>
@@ -109,7 +109,7 @@
 
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="rtneckrange">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -122,7 +122,7 @@
 
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="dystrophy">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -136,7 +136,7 @@
 
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Stamina">
+        <mat-radio-group aria-label="Stamina" formControlName="stamina">
           <mat-radio-button value="1">Good </mat-radio-button>
           <mat-radio-button value="2">Normal </mat-radio-button>
           <mat-radio-button value="3">Weak </mat-radio-button>
@@ -147,7 +147,7 @@
         <mat-label>Endurance : </mat-label>
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Endurance">
+        <mat-radio-group aria-label="Endurance" formControlName="endurance">
           <mat-radio-button value="1">Good </mat-radio-button>
           <mat-radio-button value="2">Normal </mat-radio-button>
           <mat-radio-button value="3">Weak </mat-radio-button>
@@ -172,11 +172,11 @@
     <div class="row">
       <div class="col-md-3 example-container ">
         <mat-form-field>
-          <input matInput placeholder="Pain Position">
+          <input matInput placeholder="Pain Position" formControlName="painposition">
         </mat-form-field>
       </div>
       <div class="col-md-3 example-container ">
-        <mat-form-field> <input matInput placeholder="Pain Type">
+        <mat-form-field> <input matInput placeholder="Pain Type" formControlName="paintype">
         </mat-form-field>
       </div>
     </div>
@@ -186,7 +186,7 @@
         <mat-label>Spasm : </mat-label>
       </div>
       <div class="col-md-8 example-container">
-        <mat-radio-group aria-label="Endurance">
+        <mat-radio-group aria-label="Endurance" formControlName="spasm">
           <mat-radio-button value="1">Mild </mat-radio-button>
           <mat-radio-button value="2">Heavy </mat-radio-button>
           <mat-radio-button value="3">No </mat-radio-button>
@@ -197,7 +197,7 @@
     <div class="row">
       <div class="col-md-6 example-container">
         <mat-form-field>
-          <input matInput placeholder="Spasm Position">
+          <input matInput placeholder="Spasm Position" formControlName="spasmposition">
         </mat-form-field>
       </div>
     </div>
@@ -205,12 +205,12 @@
 
     <div class="row">
       <div class="col-md-8 example-container">
-        <mat-label>Advice:</mat-label><textarea> </textarea>
+        <mat-label>Advice:</mat-label><textarea formControlName="advice"></textarea>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 example-container">
-        <mat-label>Remarks:</mat-label><textarea> </textarea>
+        <mat-label>Remarks:</mat-label><textarea formControlName="remarks"></textarea>
       </div>
     </div>
 

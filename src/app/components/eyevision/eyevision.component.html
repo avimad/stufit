@@ -1,170 +1,181 @@
 <mat-card-title>EYE VISION ASSESSMENT 16 Parameteres</mat-card-title>
 <mat-card-content>
-  <form>
+  <form [formGroup]="eyevisionForm">
     <div class="row">
       <div class="col-md-6 example-container">
         <h3>Right</h3>
       </div>
-
-
       <div class="col-md-6 example-container">
-     <h3>Left</h3>
+        <h3>Left</h3>
       </div>
       <div class="col-md-2 example-container">
         <mat-label><b>Vision</b> </mat-label>
       </div>
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Rt. Eye">
+          <input matInput placeholder="Rt. Eye" formControlName="visionrteye">
         </mat-form-field>
       </div>
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Lt. Eye">
+          <input matInput placeholder="Lt. Eye" formControlName="visionlteye">
         </mat-form-field>
       </div>
       <div class="col-md-6 example-container">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="visionremark">
         </mat-form-field>
       </div>
 
       <div class="col-md-2 example-container">
         <mat-label><b>Refraction</b> </mat-label>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Rt. Eye">
+          <input matInput placeholder="Rt. Eye" formControlName="refractionrteye">
         </mat-form-field>
       </div>
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Lt. Eye">
+          <input matInput placeholder="Lt. Eye" formControlName="refractionlteye">
         </mat-form-field>
       </div>
       <div class="col-md-6 example-container">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="refractionremark">
         </mat-form-field>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-label><b>Colour Vision</b> </mat-label>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Rt. Eye">
+          <input matInput placeholder="Rt. Eye" formControlName="colourvisionrteye">
         </mat-form-field>
       </div>
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Lt. Eye">
+          <input matInput placeholder="Lt. Eye" formControlName="colourvisionlteye">
         </mat-form-field>
       </div>
       <div class="col-md-6 example-container">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="colourvisionremark">
         </mat-form-field>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-label><b>Disease</b> </mat-label>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Rt. Eye">
+          <input matInput placeholder="Rt. Eye" formControlName="diseaserteye">
         </mat-form-field>
       </div>
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Lt. Eye">
+          <input matInput placeholder="Lt. Eye" formControlName="diseaselteye">
         </mat-form-field>
       </div>
       <div class="col-md-6 example-container">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="diseaseremark">
         </mat-form-field>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-label><b>Squint</b> </mat-label>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Rt. Eye">
+          <input matInput placeholder="Rt. Eye" formControlName="squintrteye">
         </mat-form-field>
       </div>
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Lt. Eye">
+          <input matInput placeholder="Lt. Eye" formControlName="squintlteye">
         </mat-form-field>
       </div>
       <div class="col-md-6 example-container">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="squintremark">
         </mat-form-field>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-label><b>Micro Eye Ball</b> </mat-label>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Rt. Eye">
+          <input matInput placeholder="Rt. Eye" formControlName="microeyeballrteye">
         </mat-form-field>
       </div>
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Lt. Eye">
+          <input matInput placeholder="Lt. Eye" formControlName="microeyeballlteye">
         </mat-form-field>
       </div>
       <div class="col-md-6 example-container">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="microeyeballremark">
         </mat-form-field>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-label><b>Ptosis</b> </mat-label>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Rt. Eye">
+          <input matInput placeholder="Rt. Eye" formControlName="ptosisrteye">
         </mat-form-field>
       </div>
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Lt. Eye">
+          <input matInput placeholder="Lt. Eye" formControlName="ptosislteye">
         </mat-form-field>
       </div>
       <div class="col-md-6 example-container">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="ptosisremark">
         </mat-form-field>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-label><b>Nystgmus</b> </mat-label>
       </div>
+
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Rt. Eye">
+          <input matInput placeholder="Rt. Eye" formControlName="nystgmusrteye">
         </mat-form-field>
       </div>
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Lt. Eye">
+          <input matInput placeholder="Lt. Eye" formControlName="nystgmuslteye">
         </mat-form-field>
       </div>
       <div class="col-md-6 example-container">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="nystgmusremark">
         </mat-form-field>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-8 example-container">
-        <mat-label>Advice:</mat-label><textarea> </textarea>
+        <mat-label>Advice:</mat-label><textarea formControlName="advice"> </textarea>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 example-container">
-        <mat-label>Remarks:</mat-label><textarea> </textarea>
+        <mat-label>Remarks:</mat-label><textarea formControlName="remarks"> </textarea>
       </div>
     </div>
   </form>

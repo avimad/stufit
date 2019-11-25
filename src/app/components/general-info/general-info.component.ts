@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { PdfService } from '../services/pdf.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-general-info',
@@ -8,10 +9,33 @@ import { PdfService } from '../services/pdf.service';
 })
 export class GeneralInfoComponent implements OnInit {
 
-  constructor(private pdfService: PdfService) { }
+  generalForm: FormGroup;
+  constructor(private fb: FormBuilder) { }
 
-  @ViewChild('general', { static: false }) general: ElementRef;
   ngOnInit() {
+    this.createForm();
+  }
+
+  createForm() {
+    this.generalForm = this.fb.group({
+      name: ['', Validators.required],
+      stufitId: ['', Validators.required],
+      mothername: [''],
+      fathername: [''],
+      dob: [''],
+      address: [''],
+      email: [''],
+      contactno: [''],
+      fathercontact: [''],
+      mothercontact: [''],
+      sibling1: [''],
+      sibling1class: [''],
+      sibling2: [''],
+      sibling2class: ['']
+    });
+    this.generalForm.valueChanges.subscribe(res => {
+      console.log(res);
+    });
   }
 
 }

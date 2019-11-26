@@ -1,13 +1,13 @@
 <mat-card-title>Dental & Oral Assesment Module 14-Parameteres </mat-card-title>
 <mat-card-content>
-  <form>
+  <form [formGroup]="dentalForm">
     <div class="row">
       <div class="col-md-2 example-container">
         <mat-label>Periodontal: </mat-label>
       </div>
 
       <div class="col-md-10 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formControlName="periodontal">
           <mat-radio-button value="1">Good </mat-radio-button>
           <mat-radio-button value="2">Average </mat-radio-button>
           <mat-radio-button value="3">Poor </mat-radio-button>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="col-md-10 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formControlName="dentalCaries">
           <mat-radio-button value="1">Initial </mat-radio-button>
           <mat-radio-button value="2">Moderate </mat-radio-button>
           <mat-radio-button value="3">Average </mat-radio-button>
@@ -33,7 +33,7 @@
       </div>
 
       <div class="col-md-10 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formArrayName="periodontal2">
           <mat-radio-button value="1">Mild </mat-radio-button>
           <mat-radio-button value="2">Moderate </mat-radio-button>
           <mat-radio-button value="3">Severe </mat-radio-button>
@@ -46,7 +46,7 @@
       </div>
 
       <div class="col-md-10 example-container">
-        <mat-radio-group aria-label="Orthodontic: ">
+        <mat-radio-group aria-label="Orthodontic: " formControlName="orthodontic">
           <mat-radio-button value="1">Advised </mat-radio-button>
           <mat-radio-button value="2">Not-Adviced </mat-radio-button>
         </mat-radio-group>
@@ -57,7 +57,7 @@
       </div>
 
       <div class="col-md-10 example-container">
-        <mat-radio-group aria-label="Orthodontic: ">
+        <mat-radio-group aria-label="Orthodontic: " formControlName="extration">
           <mat-radio-button value="1">Advised </mat-radio-button>
           <mat-radio-button value="2">Not-Adviced </mat-radio-button>
         </mat-radio-group>
@@ -70,7 +70,7 @@
       </div>
 
       <div class="col-md-10 example-container">
-        <mat-radio-group aria-label="Orthodontic: ">
+        <mat-radio-group aria-label="Orthodontic: " formControlName="spacemaintainer">
           <mat-radio-button value="1">Advised </mat-radio-button>
           <mat-radio-button value="2">Not-Adviced </mat-radio-button>
         </mat-radio-group>
@@ -81,7 +81,7 @@
 
       <div class="col-md-12 example-container">
         <mat-form-field>
-          <input matInput placeholder="Oral Hygiene Status">
+          <input matInput placeholder="Oral Hygiene Status" formControlName="oralhygiene">
         </mat-form-field>
       </div>
 
@@ -89,7 +89,7 @@
         <mat-label>Sugar Intake: </mat-label>
       </div>
       <div class="col-md-10 example-container">
-        <mat-radio-group aria-label="Orthodontic: ">
+        <mat-radio-group aria-label="Orthodontic: " formControlName="sugarintake">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -98,7 +98,7 @@
           <mat-label>No. of time Brushed: </mat-label>
       </div>
       <div class="col-md-10 example-container">
-          <mat-radio-group aria-label="Orthodontic: ">
+          <mat-radio-group aria-label="Orthodontic: " formControlName="timebrushed">
               <mat-radio-button value="1">Once A Day day </mat-radio-button>
               <mat-radio-button value="2">Twice A Day </mat-radio-button>
               <mat-radio-button value="2">Thrice A Day </mat-radio-button>
@@ -108,7 +108,7 @@
           <mat-label>Thumb Sucking: </mat-label>
       </div>
       <div class="col-md-10 example-container">
-          <mat-radio-group aria-label="Orthodontic: ">
+          <mat-radio-group aria-label="Orthodontic: " formControlName="thumbsucking">
               <mat-radio-button value="1">Yes </mat-radio-button>
               <mat-radio-button value="2">No </mat-radio-button>
             </mat-radio-group>
@@ -117,7 +117,7 @@
           <mat-label>Malpositioned Teeth: </mat-label>
       </div>
       <div class="col-md-10 example-container">
-          <mat-radio-group aria-label="Orthodontic: ">
+          <mat-radio-group aria-label="Orthodontic: " formControlName="malpositioned">
               <mat-radio-button value="1">Yes </mat-radio-button>
               <mat-radio-button value="2">No </mat-radio-button>
             </mat-radio-group>
@@ -126,7 +126,7 @@
           <mat-label>Dental Flourosis: </mat-label>
       </div>
       <div class="col-md-10 example-container">
-          <mat-radio-group aria-label="Orthodontic: ">
+          <mat-radio-group aria-label="Orthodontic:" formControlName="dentalflourosis">
               <mat-radio-button value="1">Yes </mat-radio-button>
               <mat-radio-button value="2">No </mat-radio-button>
             </mat-radio-group>
@@ -136,16 +136,10 @@
           <mat-label>Missing Teeth : </mat-label>
       </div>
       <div class="col-md-10 example-container">
-          <mat-radio-group aria-label="Orthodontic: ">
+          <mat-radio-group aria-label="Orthodontic:" formControlName="missingteeth">
               <mat-radio-button value="1">Yes </mat-radio-button>
               <mat-radio-button value="2">No </mat-radio-button>
             </mat-radio-group>
-      </div>
-      <div class="col-md-2 example-container">
-
-      </div>
-      <div class="col-md-10 example-container">
-
       </div>
 
 
@@ -156,44 +150,44 @@
 
       <div class="col-md-2 example-container">
         <mat-form-field>
-          <input matInput placeholder="Incisors">
+          <input matInput placeholder="Incisors" formControlName="incisors">
         </mat-form-field>
       </div>
       <div class="col-md-1 example-container">
         <mat-form-field>
-          <input matInput placeholder="Canines">
+          <input matInput placeholder="Canines" formControlName="canines">
         </mat-form-field>
       </div>
       <div class="col-md-1 example-container">
         <mat-form-field>
-          <input matInput placeholder="Premolars">
+          <input matInput placeholder="Premolars" formControlName="premolars">
         </mat-form-field>
       </div>
       <div class="col-md-1 example-container">
         <mat-form-field>
-          <input matInput placeholder="Molars">
+          <input matInput placeholder="Molars" formControlName="molars">
         </mat-form-field>
       </div>
       <div class="col-md-5 example-container">
         <section class="example-section">
           <mat-label>Deciduous Teeth: </mat-label>
-          <mat-checkbox class="example-margin"></mat-checkbox>
+          <mat-checkbox class="example-margin" formControlName="deciduousteeth"></mat-checkbox>
         </section>
       </div>
     </div>
 
   </div>
 
-    <div class="row">
-      <div class="col-md-8 example-container">
-        <mat-label>Advice:</mat-label><textarea> </textarea>
-      </div>
+  <div class="row">
+    <div class="col-md-8 example-container">
+      <mat-label>Advice:</mat-label><textarea formControlName="advice"></textarea>
     </div>
-    <div class="row">
-      <div class="col-md-8 example-container">
-        <mat-label>Remarks:</mat-label><textarea> </textarea>
-      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 example-container">
+      <mat-label>Remarks:</mat-label><textarea formControlName="remarks"></textarea>
     </div>
+  </div>
 
 
   </form>

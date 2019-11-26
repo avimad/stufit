@@ -1,12 +1,12 @@
 <mat-card-title>General Assessment Module 12 Parameters</mat-card-title>
 <mat-card-content>
-  <form>
+  <form [formGroup]="generalassessmentForm">
     <div class="row">
       <div class="col-md-3 example-container ">
         <mat-label>Chest Auscultation : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="chestauscultation">
           <mat-radio-button value="1">Clear </mat-radio-button>
           <mat-radio-button value="2">Not Clear </mat-radio-button>
         </mat-radio-group>
@@ -16,12 +16,12 @@
         <mat-label>Abdomen Palpitation : </mat-label>
       </div>
       <div class="col-md-9 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy"  formControlName="abdomenpalpitation">
           <mat-radio-button value="1">Tender </mat-radio-button>
           <mat-radio-button value="2">Soft </mat-radio-button>
-          <mat-radio-button value="2">Distended </mat-radio-button>
-          <mat-radio-button value="2">Normal </mat-radio-button>
-          <mat-radio-button value="2">Tempt </mat-radio-button>
+          <mat-radio-button value="3">Distended </mat-radio-button>
+          <mat-radio-button value="4">Normal </mat-radio-button>
+          <mat-radio-button value="5">Tempt </mat-radio-button>
         </mat-radio-group>
       </div>
 
@@ -30,7 +30,7 @@
       </div>
       <div class="col-md-9 example-container ">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="activeinfectious">
         </mat-form-field>
       </div>
 
@@ -38,7 +38,7 @@
         <mat-label>Cleft Lip & Palate : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="cleftlip">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -48,7 +48,7 @@
         <mat-label>Club Foot : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="clubfoot">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -58,7 +58,7 @@
         <mat-label>Congenital Cataract : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="congenitalcataract">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -68,7 +68,7 @@
         <mat-label>Congenital Deafness : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="congenitaldeafness">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -78,7 +78,7 @@
         <mat-label>Congenital Heart Disease : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="congenitalheart">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -89,7 +89,7 @@
       </div>
       <div class="col-md-9 example-container ">
         <mat-form-field>
-          <input matInput placeholder="Remarks :">
+          <input matInput placeholder="Remarks :" formControlName="skincondition">
         </mat-form-field>
       </div>
 
@@ -97,7 +97,7 @@
         <mat-label>Otitis Media : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="otitis">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -106,7 +106,7 @@
         <mat-label>Neuro Motor Impairment : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="neuromotor">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -116,7 +116,7 @@
         <mat-label>Body Type : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="bodytype">
           <mat-radio-button value="1">Thin </mat-radio-button>
           <mat-radio-button value="2">Average </mat-radio-button>
           <mat-radio-button value="3">Faty </mat-radio-button>
@@ -128,12 +128,12 @@
 
     <div class="row">
       <div class="col-md-8 example-container">
-        <mat-label>Advice:</mat-label><textarea> </textarea>
+        <mat-label>Advice:</mat-label><textarea formControlName="advice"></textarea>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 example-container">
-        <mat-label>Remarks:</mat-label><textarea> </textarea>
+        <mat-label>Remarks:</mat-label><textarea formControlName="remarks"></textarea>
       </div>
     </div>
 

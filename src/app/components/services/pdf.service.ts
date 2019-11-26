@@ -133,6 +133,13 @@ export class PdfService {
     this.doc.line(45, 190, 545, 190);
     this.doc.line(45, 210, 545, 210);
 
+    this.doc.line(98, 170, 98, 230);
+
+    this.doc.line(420, 170, 420, 230);
+
+    this.doc.line(360, 170, 360, 230);
+    this.doc.line(480, 170, 480, 230);
+
     this.doc.line(45, 230, 545, 230);
     this.doc.line(45, 270, 545, 270);
     this.doc.line(45, 310, 545, 310);
@@ -204,7 +211,7 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Neck Range of Motion:', 45, this.marginY + 230);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 225, this.marginY + 230);
+    this.doc.text('Normal', 215, this.marginY + 230);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Rt. Leg Range of Motion:', 45, this.marginY + 270);
@@ -219,22 +226,22 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Dystrophy:', 45, this.marginY + 350);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 150, this.marginY + 350);
+    this.doc.text('No', 130, this.marginY + 350);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Atrophy:', 250, this.marginY + 350);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 310, this.marginY + 350);
+    this.doc.text('No', 315, this.marginY + 350);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Stamina:', 45, this.marginY + 390);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 150, this.marginY + 390);
+    this.doc.text('Normal', 110, this.marginY + 390);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Endurance:', 45, this.marginY + 430);
     this.doc.setFontStyle('normal');
-    this.doc.text('Heavy', 150, this.marginY + 430);
+    this.doc.text('Heavy', 130, this.marginY + 430);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Pain:', 45, this.marginY + 470);
@@ -257,14 +264,14 @@ export class PdfService {
     this.doc.text('Normal', 370, this.marginY + 510);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Advice:', 45, this.marginY + 620);
+    this.doc.text('Advice:', 45, this.marginY + 540);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 100, this.marginY + 620);
+    this.doc.text('text', 100, this.marginY + 540);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Remarks:', 45, this.marginY + 650);
+    this.doc.text('Remarks:', 45, this.marginY + 620);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 120, this.marginY + 650);
+    this.doc.text('text', 120, this.marginY + 620);
 
     this.footer();
   }
@@ -284,105 +291,105 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Periodontal:', 45, this.marginY + 70);
     this.doc.setFontStyle('normal');
-    this.doc.text('Average', 150, this.marginY + 70);
+    this.doc.text('Average', 140, this.marginY + 70);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Dental Caries:', 45, this.marginY + 110);
+    this.doc.text('Dental Caries:', 45, this.marginY + 100);
     this.doc.setFontStyle('normal');
-    this.doc.text('Advance', 150, this.marginY + 110);
+    this.doc.text('Advance', 150, this.marginY + 100);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Periodontal :', 45, this.marginY + 150);
+    this.doc.text('Periodontal :', 45, this.marginY + 130);
     this.doc.setFontStyle('normal');
-    this.doc.text('Moderate', 150, this.marginY + 150);
+    this.doc.text('Moderate', 140, this.marginY + 130);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Orthodontic Correction :', 45, this.marginY + 190);
+    this.doc.text('Orthodontic Correction :', 45, this.marginY + 160);
     this.doc.setFontStyle('normal');
-    this.doc.text('Advised', 235, this.marginY + 190);
+    this.doc.text('Advised', 215, this.marginY + 160);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Extraction :', 45, this.marginY + 230);
+    this.doc.text('Extraction :', 45, this.marginY + 190);
     this.doc.setFontStyle('normal');
-    this.doc.text('Advised', 150, this.marginY + 230);
+    this.doc.text('Advised', 120, this.marginY + 190);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Space Maintainer :', 45, this.marginY + 270);
+    this.doc.text('Space Maintainer :', 45, this.marginY + 220);
     this.doc.setFontStyle('normal');
-    this.doc.text('Not Advised', 200, this.marginY + 270);
+    this.doc.text('Not Advised', 170, this.marginY + 220);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Oral Hygiene Status:', 45, this.marginY + 310);
+    this.doc.text('Oral Hygiene Status:', 45, this.marginY + 250);
     this.doc.setFontStyle('normal');
-    this.doc.text('Poor', 200, this.marginY + 310);
+    this.doc.text('Poor', 190, this.marginY + 250);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Sugar Intake:', 45, this.marginY + 350);
+    this.doc.text('Sugar Intake:', 45, this.marginY + 280);
     this.doc.setFontStyle('normal');
-    this.doc.text('Yes', 150, this.marginY + 350);
+    this.doc.text('Yes', 150, this.marginY + 280);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('No. of time Brushed :', 45, this.marginY + 390);
+    this.doc.text('No. of time Brushed :', 45, this.marginY + 310);
     this.doc.setFontStyle('normal');
-    this.doc.text('Once A Day', 220, this.marginY + 390);
+    this.doc.text('Once A Day', 190, this.marginY + 310);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Thumb Sucking:', 45, this.marginY + 430);
+    this.doc.text('Thumb Sucking:', 45, this.marginY + 340);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 200, this.marginY + 430);
+    this.doc.text('No', 170, this.marginY + 340);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Malpositioned Teeth :', 45, this.marginY + 470);
+    this.doc.text('Malpositioned Teeth :', 45, this.marginY + 370);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 220, this.marginY + 470);
+    this.doc.text('No', 190, this.marginY + 370);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Dental Flourosis:', 45, this.marginY + 510);
+    this.doc.text('Dental Flourosis:', 45, this.marginY + 400);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 200, this.marginY + 510);
+    this.doc.text('No', 170, this.marginY + 400);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Missing Teeth :', 45, this.marginY + 550);
+    this.doc.text('Missing Teeth :', 45, this.marginY + 430);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 150, this.marginY + 550);
+    this.doc.text('No', 150, this.marginY + 430);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('No. of Teeth :', 45, this.marginY + 590);
+    this.doc.text('No. of Teeth :', 45, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('Incisors-', 140, this.marginY + 590);
+    this.doc.text('Incisors-', 140, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('8', 190, this.marginY + 590);
+    this.doc.text('8', 194, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('Canines-', 205, this.marginY + 590);
+    this.doc.text('Canines-', 205, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('4', 265, this.marginY + 590);
+    this.doc.text('4', 265, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('Premolars-', 280, this.marginY + 590);
+    this.doc.text('Premolars-', 280, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('8', 350, this.marginY + 590);
+    this.doc.text('8', 350, this.marginY + 460);
 
     this.doc.setFontStyle('Molars');
-    this.doc.text('Molars-', 365, this.marginY + 590);
+    this.doc.text('Molars-', 365, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('7', 410, this.marginY + 590);
+    this.doc.text('7', 410, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('Deciduous Teeth-', 425, this.marginY + 590);
+    this.doc.text('Deciduous Teeth-', 425, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('Yes', 530, this.marginY + 590);
-
-    this.doc.setFontStyle('bold');
-    this.doc.text('Advice:', 45, this.marginY + 620);
-    this.doc.setFontStyle('normal');
-    this.doc.text('text', 100, this.marginY + 620);
+    this.doc.text('Yes', 530, this.marginY + 460);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Remarks:', 45, this.marginY + 650);
+    this.doc.text('Advice:', 45, this.marginY + 500);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 120, this.marginY + 650);
+    this.doc.text('text', 100, this.marginY + 500);
+
+    this.doc.setFontStyle('bold');
+    this.doc.text('Remarks:', 45, this.marginY + 560);
+    this.doc.setFontStyle('normal');
+    this.doc.text('text', 120, this.marginY + 560);
   }
 
   audiomentryPdf() {
@@ -392,7 +399,7 @@ export class PdfService {
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('Audiometry & Speech Therapy Module', 120, this.marginY + 40);
+    this.doc.text('Audiometry & Speech Therapy Module {13 Parameteres}', 120, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -400,86 +407,86 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Speech Milestones:', 45, this.marginY + 70);
     this.doc.setFontStyle('normal');
-    this.doc.text('Achieved', 200, this.marginY + 70);
+    this.doc.text('Achieved', 170, this.marginY + 70);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Comprehension:', 45, this.marginY + 110);
+    this.doc.text('Comprehension:', 45, this.marginY + 100);
     this.doc.setFontStyle('normal');
-    this.doc.text('Verbal', 150, this.marginY + 110);
+    this.doc.text('Verbal', 150, this.marginY + 100);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Expression :', 45, this.marginY + 150);
+    this.doc.text('Expression :', 45, this.marginY + 130);
     this.doc.setFontStyle('normal');
-    this.doc.text('Verbal', 125, this.marginY + 150);
+    this.doc.text('Verbal', 125, this.marginY + 130);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Mode of Communication:', 45, this.marginY + 190);
+    this.doc.text('Mode of Communication:', 45, this.marginY + 160);
     this.doc.setFontStyle('normal');
-    this.doc.text('Verbal', 200, this.marginY + 190);
+    this.doc.text('Verbal', 210, this.marginY + 160);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Auditory Skills:', 45, this.marginY + 230);
+    this.doc.text('Auditory Skills:', 45, this.marginY + 190);
     this.doc.setFontStyle('normal');
-    this.doc.text('Achieved', 150, this.marginY + 230);
+    this.doc.text('Achieved', 150, this.marginY + 190);
 
     this.doc.setFontStyle('bold');
     this.doc.text(
       'Parent\'s opinion about hearing loss :',
       45,
-      this.marginY + 270
+      this.marginY + 220
     );
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 300, this.marginY + 270);
+    this.doc.text('text', 270, this.marginY + 220);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Hearing loss:', 45, this.marginY + 310);
+    this.doc.text('Hearing loss:', 45, this.marginY + 250);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 150, this.marginY + 310);
+    this.doc.text('No', 140, this.marginY + 250);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Tinnitus:', 45, this.marginY + 350);
+    this.doc.text('Tinnitus:', 45, this.marginY + 280);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 150, this.marginY + 350);
+    this.doc.text('No', 110, this.marginY + 280);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Lt. Ear Perforation:', 45, this.marginY + 390);
+    this.doc.text('Lt. Ear Perforation:', 45, this.marginY + 310);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 200, this.marginY + 390);
+    this.doc.text('No', 170, this.marginY + 310);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Rt. Ear Perforation:', 45, this.marginY + 430);
+    this.doc.text('Rt. Ear Perforation:', 45, this.marginY + 340);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 200, this.marginY + 430);
+    this.doc.text('No', 170, this.marginY + 340);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Medical History ( if any):', 45, this.marginY + 470);
+    this.doc.text('Medical History ( if any):', 45, this.marginY + 370);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 220, this.marginY + 470);
+    this.doc.text('No', 210, this.marginY + 370);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Respond on Name Call:', 45, this.marginY + 510);
+    this.doc.text('Respond on Name Call:', 45, this.marginY + 400);
     this.doc.setFontStyle('normal');
-    this.doc.text('Yes', 200, this.marginY + 510);
+    this.doc.text('Yes', 200, this.marginY + 400);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Hearing Assessment Result:', 45, this.marginY + 550);
+    this.doc.text('Hearing Assessment Result:', 45, this.marginY + 430);
     this.doc.setFontStyle('normal');
-    this.doc.text('PTA', 230, this.marginY + 550);
+    this.doc.text('PTA', 220, this.marginY + 430);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('B/L Wa:', 45, this.marginY + 590);
+    this.doc.text('B/L Wa:', 45, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('Yes', 100, this.marginY + 590);
+    this.doc.text('Yes', 110, this.marginY + 460);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Advice:', 45, this.marginY + 620);
+    this.doc.text('Advice:', 45, this.marginY + 500);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 100, this.marginY + 620);
+    this.doc.text('text', 100, this.marginY + 500);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Remarks:', 45, this.marginY + 650);
+    this.doc.text('Remarks:', 45, this.marginY + 570);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 120, this.marginY + 650);
+    this.doc.text('text', 120, this.marginY + 570);
   }
 
   nutritionalPdf() {
@@ -489,7 +496,7 @@ export class PdfService {
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('Nutritional Assessment Module', 120, this.marginY + 40);
+    this.doc.text('Nutritional Assessment Module { 7 Parameters }', 220, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -500,27 +507,27 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Vitamin A deficiency:', 45, this.marginY + 110);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 200, this.marginY + 110);
+    this.doc.text('No', 180, this.marginY + 110);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Vitamin D deficiency :', 45, this.marginY + 150);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 200, this.marginY + 150);
+    this.doc.text('No', 180, this.marginY + 150);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Obesity:', 45, this.marginY + 190);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 100, this.marginY + 190);
+    this.doc.text('No', 105, this.marginY + 190);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Ideal Body weigh:', 45, this.marginY + 230);
     this.doc.setFontStyle('normal');
-    this.doc.text('61.85 Kg', 180, this.marginY + 230);
+    this.doc.text('61.85 Kg', 160, this.marginY + 230);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Ideal Calories estimation :', 45, this.marginY + 270);
     this.doc.setFontStyle('normal');
-    this.doc.text('1972 k Cal/Day', 200, this.marginY + 270);
+    this.doc.text('1972 k Cal/Day', 220, this.marginY + 270);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Micro nutrient Distribution :', 45, this.marginY + 310);
@@ -538,12 +545,12 @@ export class PdfService {
     this.doc.setFontStyle('normal');
     this.doc.text('Proteins-', 460, this.marginY + 310);
     this.doc.setFontStyle('normal');
-    this.doc.text('31.3', 510, this.marginY + 310);
+    this.doc.text('31.3', 520, this.marginY + 310);
 
     this.doc.setFontStyle('normal');
     this.doc.text('Fluid Estimation-', 230, this.marginY + 350);
     this.doc.setFontStyle('normal');
-    this.doc.text('246.2 ml', 330, this.marginY + 350);
+    this.doc.text('246.2 ml', 340, this.marginY + 350);
 
     this.doc.setFontStyle('normal');
     this.doc.text('7', 410, this.marginY + 350);
@@ -551,14 +558,14 @@ export class PdfService {
     this.doc.text('glasses-', 430, this.marginY + 350);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Advice:', 45, this.marginY + 620);
+    this.doc.text('Advice:', 45, this.marginY + 390);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 100, this.marginY + 620);
+    this.doc.text('text', 100, this.marginY + 390);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Remarks:', 45, this.marginY + 650);
+    this.doc.text('Remarks:', 45, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 120, this.marginY + 650);
+    this.doc.text('text', 120, this.marginY + 460);
   }
 
   pschycoPdf() {
@@ -568,7 +575,7 @@ export class PdfService {
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('Pschycological Assesment Module', 120, this.marginY + 40);
+    this.doc.text('Pschycological Assesment Module { 17 Parameters }', 220, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -679,14 +686,14 @@ export class PdfService {
     this.doc.text('No', 350, this.marginY + 550);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Advice:', 45, this.marginY + 620);
+    this.doc.text('Advice:', 45, this.marginY + 580);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 100, this.marginY + 620);
+    this.doc.text('text', 100, this.marginY + 580);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Remarks:', 45, this.marginY + 650);
+    this.doc.text('Remarks:', 45, this.marginY + 645);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 120, this.marginY + 650);
+    this.doc.text('text', 120, this.marginY + 645);
   }
 
   generalasessmentPdf() {
@@ -696,7 +703,7 @@ export class PdfService {
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('General Assessment?Module', 120, this.marginY + 40);
+    this.doc.text('General Assessment Module {12 Parameters}', 220, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -704,12 +711,12 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Chest Auscultation:', 45, this.marginY + 70);
     this.doc.setFontStyle('normal');
-    this.doc.text('Clear', 200, this.marginY + 70);
+    this.doc.text('Clear', 170, this.marginY + 70);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Abdomen Palpitation:', 45, this.marginY + 110);
     this.doc.setFontStyle('normal');
-    this.doc.text('Soft', 200, this.marginY + 110);
+    this.doc.text('Soft', 175, this.marginY + 110);
 
     this.doc.setFontStyle('bold');
     this.doc.text(
@@ -718,42 +725,42 @@ export class PdfService {
       this.marginY + 150
     );
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 300, this.marginY + 150);
+    this.doc.text('text', 260, this.marginY + 150);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Cleft Lip & Palate :', 45, this.marginY + 190);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 200, this.marginY + 190);
+    this.doc.text('No', 165, this.marginY + 190);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Club Foot :', 45, this.marginY + 230);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 150, this.marginY + 230);
+    this.doc.text('No', 110, this.marginY + 230);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Congenital Cataract :', 45, this.marginY + 270);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 220, this.marginY + 270);
+    this.doc.text('No', 180, this.marginY + 270);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Congenital Deafness :', 45, this.marginY + 310);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 200, this.marginY + 310);
+    this.doc.text('No', 180, this.marginY + 310);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Congenital Heart Disease:', 45, this.marginY + 350);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 250, this.marginY + 350);
+    this.doc.text('No', 200, this.marginY + 350);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Skin Condition (if Any):', 45, this.marginY + 390);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 250, this.marginY + 390);
+    this.doc.text('text', 195, this.marginY + 390);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Otitis Media:', 45, this.marginY + 430);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 180, this.marginY + 430);
+    this.doc.text('No', 130, this.marginY + 430);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Neuro Motor Impairment :', 45, this.marginY + 470);
@@ -763,16 +770,16 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Body Type:', 45, this.marginY + 510);
     this.doc.setFontStyle('normal');
-    this.doc.text('Average', 200, this.marginY + 510);
+    this.doc.text('Average', 100, this.marginY + 510);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Advice:', 45, this.marginY + 620);
+    this.doc.text('Advice:', 45, this.marginY + 540);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 100, this.marginY + 620);
+    this.doc.text('text', 100, this.marginY + 540);
 
     this.doc.setFontStyle('bold');
-    this.doc.text('Remarks:', 45, this.marginY + 650);
+    this.doc.text('Remarks:', 45, this.marginY + 610);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 120, this.marginY + 650);
+    this.doc.text('text', 115, this.marginY + 610);
   }
 }

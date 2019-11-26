@@ -1,12 +1,12 @@
 <mat-card-title>Pschycological Assesment Module 17 ?Parameters</mat-card-title>
 <mat-card-content>
-  <form>
+  <form [formGroup]="pschycologicalForm">
     <div class="row">
       <div class="col-md-4 example-container ">
         <mat-label>Behavior Disorder : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="behaviordisorder">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -16,7 +16,7 @@
         <mat-label>Learning Disorder : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="learningdisorder">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -26,7 +26,7 @@
         <mat-label>Attention Deficit Hyperactivity Disorder (ADHD) : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="attentiondeficit">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -36,7 +36,7 @@
         <mat-label>Depression : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="depression">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -46,7 +46,7 @@
         <mat-label>Anxiety : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="anxiety">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -56,7 +56,7 @@
         <mat-label>Eating Disorder : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="eatingdisorder">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -66,7 +66,7 @@
         <mat-label>Phobia : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="phobia">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -79,7 +79,7 @@
         <mat-label>Video Game Addiction : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="videogame">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -89,7 +89,7 @@
         <mat-label>Internet Addiction : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="internetaddiction">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -99,7 +99,7 @@
         <mat-label>Social Anxiety Disorder : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="socialanxiety">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -109,7 +109,7 @@
         <mat-label>Schizophrenia : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="schizophrenia">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -119,7 +119,7 @@
         <mat-label>Sleep Disorder : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="sleepdisorder">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -133,7 +133,7 @@
         <mat-label>Substance Abuse : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="substanceabuse">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -143,7 +143,7 @@
         <mat-label>Delay in Menstruation Cycles : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="delayinmenstruation">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -153,7 +153,7 @@
         <mat-label>Irregular Periods : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="irregularperiods">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -163,7 +163,7 @@
         <mat-label>Pain During Menstruation : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="painduringmenstruation">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -173,7 +173,7 @@
         <mat-label>Pain or Burning Sensation while urinating : </mat-label>
       </div>
       <div class="col-md-8 example-container ">
-        <mat-radio-group aria-label="Dystrophy">
+        <mat-radio-group aria-label="Dystrophy" formControlName="painorburning">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -181,16 +181,16 @@
 
     </div>
 
-      <div class="row">
-          <div class="col-md-8 example-container">
-            <mat-label>Advice:</mat-label><textarea> </textarea>
-          </div>
-        </div>
-          <div class="row">
-          <div class="col-md-8 example-container">
-            <mat-label>Remarks:</mat-label><textarea> </textarea>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-md-8 example-container">
+        <mat-label>Advice:</mat-label><textarea formControlName="advice"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 example-container">
+        <mat-label>Remarks:</mat-label><textarea formControlName="remarks"></textarea>
+      </div>
+    </div>
 
 
   </form>

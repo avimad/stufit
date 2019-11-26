@@ -1,17 +1,17 @@
 <mat-card-title>Audiometry & ?Speech Therapy Module 13?Parameteres</mat-card-title>
 <mat-card-content>
-  <form>
+  <form [formGroup]="audiometryForm">
     <div class="row">
       <div class="col-md-12 example-container">
         <mat-label>Speech Milestones:</mat-label>
-        <textarea> </textarea>
+        <textarea formControlName="speechmilestones"> </textarea>
       </div>
 
       <div class="col-md-2 example-container">
         <mat-label>Comprehension: </mat-label>
       </div>
       <div class="col-md-10 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal:" formControlName="comprehension">
           <mat-radio-button value="1">Verbal </mat-radio-button>
           <mat-radio-button value="2">Non Verbal </mat-radio-button>
           <mat-radio-button value="3">Gesture </mat-radio-button>
@@ -25,7 +25,7 @@
         <mat-label>Expression: </mat-label>
       </div>
       <div class="col-md-10 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formControlName="expression">
           <mat-radio-button value="1">Verbal </mat-radio-button>
           <mat-radio-button value="2">Non Verbal </mat-radio-button>
           <mat-radio-button value="3">Gesture </mat-radio-button>
@@ -38,21 +38,21 @@
     <div class="row">
       <div class="col-md-8 example-container">
         <mat-label>Mode of communication:</mat-label>
-        <textarea></textarea>
+        <textarea formControlName="modeofcommunication"></textarea>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-8 example-container">
         <mat-label>Auditory Skills:</mat-label>
-        <textarea> </textarea>
+        <textarea formControlName="auditoryskills"> </textarea>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-8 example-container">
         <mat-label>Parent's Opinion about hearing loss:</mat-label>
-        <textarea></textarea>
+        <textarea formControlName="parentsopinion"></textarea>
       </div>
     </div>
 
@@ -61,7 +61,7 @@
         <mat-label>Hearing loss: </mat-label>
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Periodontal">
+        <mat-radio-group aria-label="Periodontal" formControlName="hearingloss">
           <mat-radio-button value="1">Static </mat-radio-button>
           <mat-radio-button value="2">Progressive </mat-radio-button>
           <mat-radio-button value="3">No </mat-radio-button>
@@ -72,7 +72,7 @@
         <mat-label>Tinnitus: </mat-label>
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formControlName="tinnitus">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -84,7 +84,7 @@
       </div>
 
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formControlName="lteperiodontal">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -96,7 +96,7 @@
         <mat-label>Rt. Ear Perforation: </mat-label>
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formControlName="rteperiodontal">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -107,7 +107,7 @@
         <mat-label>Respond on Name Call: </mat-label>
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formControlName="respondonname">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -117,7 +117,7 @@
         <mat-label>Hearing Assessment Result: </mat-label>
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formControlName="hearingassessment">
           <mat-radio-button value="1">PTA </mat-radio-button>
           <mat-radio-button value="2">BOA </mat-radio-button>
           <mat-radio-button value="2">VRA </mat-radio-button>
@@ -129,7 +129,7 @@
         <mat-label>B/L Wax: </mat-label>
       </div>
       <div class="col-md-9 example-container">
-        <mat-radio-group aria-label="Periodontal: ">
+        <mat-radio-group aria-label="Periodontal: " formControlName="blwax">
           <mat-radio-button value="1">Yes </mat-radio-button>
           <mat-radio-button value="2">No </mat-radio-button>
         </mat-radio-group>
@@ -139,18 +139,18 @@
 
     <div class="row">
       <div class="col-md-8 example-container">
-        <mat-label>Medical History (if any):</mat-label><textarea> </textarea>
+        <mat-label>Medical History (if any):</mat-label><textarea formControlName="medicalhistory"> </textarea>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-8 example-container">
-        <mat-label>Advice:</mat-label><textarea> </textarea>
+        <mat-label>Advice:</mat-label><textarea formControlName="advice"></textarea>
       </div>
     </div>
     <div class="row">
       <div class="col-md-8 example-container">
-        <mat-label>Remarks:</mat-label><textarea> </textarea>
+        <mat-label>Remarks:</mat-label><textarea formControlName="remarks"></textarea>
       </div>
     </div>
 

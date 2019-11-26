@@ -1,42 +1,43 @@
 <mat-card-title>ANTHROPOMETRY - 17 Parameters</mat-card-title>
 <mat-card-content>
   <form [formGroup]="anhthropometryForm">
-      <div class="row">
-      <div class="col-md-4 example-container">
+    <div class="row">
+      <div class="col-md-2 example-container">
         <mat-form-field>
           <input matInput placeholder="Height" formControlName="height">
           <span matSuffix>Ft</span>
         </mat-form-field>
       </div>
-      <div class="col-md-4 example-container">
+      <div class="col-md-2 example-container">
         <mat-form-field>
           <input matInput placeholder="Weight" formControlName="weight">
           <span matSuffix>Kg</span>
         </mat-form-field>
       </div>
-      <div class="col-md-4 example-container">
+      <div class="col-md-2 example-container">
         <mat-form-field>
           <input matInput placeholder="BMI" formControlName="bmi">
           <span matSuffix>Kg/m <sup>2</sup></span>
         </mat-form-field>
       </div>
+      <div class="col-md-2 example-container ">
+        <mat-form-field>
+          <input matInput placeholder="Blood Pressure" formControlName="bloodpressure">
+        </mat-form-field>
+      </div>
+      <div class="col-md-2 example-container ">
+        <mat-form-field>
+          <input matInput placeholder="Pulse Rate" formControlName="pulserate">
+        </mat-form-field>
+      </div>
 
     </div>
 
-      <div class="row">
-        <div class="col-md-3 example-container ">
-          <mat-form-field>
-            <input matInput placeholder="Blood Pressure" formControlName="bloodpressure">
-          </mat-form-field>
-        </div>
-        <div class="col-md-3 example-container ">
-          <mat-form-field>
-            <input matInput placeholder="Pulse Rate" formControlName="pulserate">
-          </mat-form-field>
-        </div>
-      </div>
+    <div class="row">
 
-      <div class="row">
+    </div>
+
+    <div class="row">
       <div class="col-md-3 example-container">
         <mat-label>Posture: </mat-label>
       </div>

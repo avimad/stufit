@@ -1,6 +1,6 @@
 <mat-card-title>Nutritional Assessment Module 7 Parameters </mat-card-title>
 <mat-card-content>
-  <form formGroup="nutritionalassessmentForm">
+  <form [formGroup]="nutritionalassessmentForm">
 
     <div class="row">
       <div class="col-md-3 example-container ">
@@ -8,57 +8,57 @@
       </div>
 
       <div class="col-md-8 example-container ">
-          <mat-radio-group aria-label="Posture:" formControlName="select">
-              <mat-radio-button value="1">Anaemic </mat-radio-button>
-              <mat-radio-button value="2">Severe Anaemic </mat-radio-button>
-              <mat-radio-button value="3">Non Anaemic </mat-radio-button>
-            </mat-radio-group>
+        <mat-radio-group aria-label="Posture:" formControlName="select">
+          <mat-radio-button value="1">Anaemic </mat-radio-button>
+          <mat-radio-button value="2">Severe Anaemic </mat-radio-button>
+          <mat-radio-button value="3">Non Anaemic </mat-radio-button>
+        </mat-radio-group>
       </div>
 
       <div class="col-md-3 example-container ">
-          <mat-label>Vitamin A deficiency: </mat-label>
+        <mat-label>Vitamin A deficiency: </mat-label>
       </div>
 
       <div class="col-md-8 example-container ">
-          <mat-radio-group aria-label="Dystrophy" formControlName="vitamina">
-              <mat-radio-button value="1">Yes </mat-radio-button>
-              <mat-radio-button value="2">No </mat-radio-button>
-            </mat-radio-group>
-        </div>
+        <mat-radio-group aria-label="Dystrophy" formControlName="vitamina">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No </mat-radio-button>
+        </mat-radio-group>
+      </div>
 
       <div class="col-md-3 example-container ">
-          <mat-label>Vitamin D deficiency: </mat-label>
-        </div>
-        <div class="col-md-8 example-container ">
-            <mat-radio-group aria-label="Dystrophy" formControlName="vitamind">
-                <mat-radio-button value="1">Yes </mat-radio-button>
-                <mat-radio-button value="2">No </mat-radio-button>
-              </mat-radio-group>
-          </div>
+        <mat-label>Vitamin D deficiency: </mat-label>
+      </div>
+      <div class="col-md-8 example-container ">
+        <mat-radio-group aria-label="Dystrophy" formControlName="vitamind">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No </mat-radio-button>
+        </mat-radio-group>
+      </div>
 
-        <div class="col-md-3 example-container ">
-            <mat-label>Obesity: </mat-label>
-          </div>
-          <div class="col-md-8 example-container ">
-              <mat-radio-group aria-label="Dystrophy" formControlName="obesity">
-                  <mat-radio-button value="1">Yes </mat-radio-button>
-                  <mat-radio-button value="2">No </mat-radio-button>
-                </mat-radio-group>
-            </div>
+      <div class="col-md-3 example-container ">
+        <mat-label>Obesity: </mat-label>
+      </div>
+      <div class="col-md-8 example-container ">
+        <mat-radio-group aria-label="Dystrophy" formControlName="obesity">
+          <mat-radio-button value="1">Yes </mat-radio-button>
+          <mat-radio-button value="2">No </mat-radio-button>
+        </mat-radio-group>
+      </div>
 
     </div>
 
 
-   <div class="row">
+    <div class="row">
       <div class="col-md-3 example-container">
         <mat-form-field>
           <input matInput placeholder="Ideal body Weight" formControlName="idealbodyweight">
           <span matSuffix>Kg</span>
         </mat-form-field>
       </div>
-   </div>
+    </div>
 
-   <div class="row">
+    <div class="row">
       <div class="col-md-3 example-container">
         <mat-form-field>
           <input matInput placeholder="Ideal Calories estimation" formControlName="idealcaloriesestimation">
@@ -88,29 +88,29 @@
         </mat-form-field>
       </div>
 
-    <div class="col-md-2 example-container">
-      <mat-form-field>
-        <input matInput placeholder="Fluid Estimation" formControlName="fluidestimation"><span matSuffix>ml</span>
-      </mat-form-field>
+      <div class="col-md-2 example-container">
+        <mat-form-field>
+          <input matInput placeholder="Fluid Estimation" formControlName="fluidestimation"><span matSuffix>ml</span>
+        </mat-form-field>
+      </div>
+      <div class="col-md-2 example-container">
+        <mat-form-field>
+          <input matInput formControlName="glasses">
+          <span matSuffix>glasses</span>
+        </mat-form-field>
+      </div>
     </div>
-    <div class="col-md-2 example-container">
-      <mat-form-field>
-        <input matInput formControlName="glasses">
-        <span matSuffix>glasses</span>
-      </mat-form-field>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-8 example-container">
-      <mat-label>Advice:</mat-label><textarea formControlName="advice"></textarea>
+    <div class="row">
+      <div class="col-md-8 example-container">
+        <mat-label>Advice:</mat-label><textarea formControlName="advice"></textarea>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-8 example-container">
-      <mat-label>Remarks:</mat-label><textarea formControlName="remarks"></textarea>
+    <div class="row">
+      <div class="col-md-8 example-container">
+        <mat-label>Remarks:</mat-label><textarea formControlName="remarks"></textarea>
+      </div>
     </div>
-  </div>
 
 
 

@@ -16,21 +16,21 @@ export class NutritionalComponent implements OnInit {
 
   createForm() {
     this.nutritionalassessmentForm = this.fb.group({
-      Select:[''],
-      vitamina:[''],
-      vitamind:[''],
-      obesity:[''],
-      idealbodyweight:[''],
-      idealcaloriesestimation:[''],
-      fats:[''],
-      cabohydrates:[''],
-      proteins:[''],
-      fluidestimation:[''],
-      glasses:[''],
-      advice:[''],
-      remarks:['']
+      Select: [''],
+      vitamina: [''],
+      vitamind: [''],
+      obesity: [''],
+      idealbodyweight: [''],
+      idealcaloriesestimation: [''],
+      fats: [''],
+      cabohydrates: [''],
+      proteins: [''],
+      fluidestimation: [''],
+      glasses: [''],
+      advice: [''],
+      remarks: ['']
     });
-    this.nutritionalassessmentForm.valueChanges.subscribe(res=> {
+    this.nutritionalassessmentForm.valueChanges.subscribe(res => {
       console.log(res);
     });
   }

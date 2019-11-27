@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { PdfService } from '../services/pdf.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { GeneralInfo } from 'src/app/models/stufit';
+import { StufitService } from '../services/stufit.service';
 
 @Component({
   selector: 'app-general-info',
@@ -10,7 +11,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class GeneralInfoComponent implements OnInit {
 
   generalForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  model: GeneralInfo = {};
+  constructor(private fb: FormBuilder, private service: StufitService) { }
 
   ngOnInit() {
     this.createForm();
@@ -34,8 +36,29 @@ export class GeneralInfoComponent implements OnInit {
       sibling2class: ['']
     });
     this.generalForm.valueChanges.subscribe(res => {
-      console.log(res);
+
+      console.log(this.model);
     });
+  }
+
+  saveGeneralInfo() {
+    const res = this.generalForm.controls;
+    this.model.Name = res.name.value;
+    this.model.Address = res.address.value;
+    this.model.DOB = res.dob.value;
+    this.model.Email = res.email.value;
+    this.model.FatherName = res.fathername.value;
+    this.model.FatherPhone = res.fathercontact.value;
+    this.model.MotherName = res.mothername.value;
+    this.model.MotherPhone = res.mothercontact.value;
+    this.model.StufitID = res.stufitId.value;
+
+    this.model.Siblings = [];
+    this.model.Siblings.push({ class: res.sibling1.value, sec: res.sibling1class.value });
+    this.model.Siblings.push({ class: res.sibling2.value, sec: res.sibling2class.value });
+
+    console.log(this.model);
+
   }
 
 }

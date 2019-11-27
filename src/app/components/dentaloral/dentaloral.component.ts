@@ -15,30 +15,30 @@ export class DentaloralComponent implements OnInit {
     this.createForm();
   }
 
-  createForm(){
+  createForm() {
     this.dentalForm = this.fb.group({
-      periodontal:[''],
-      dentalCaries:[''],
-      periodontal2:[''],
-      orthodontic:[''],
-      extration:[''],
-      spacemaintainer:[''],
-      oralhygiene:[''],
-      sugarintake:[''],
-      timebrushed:[''],
-      thumbsucking:[''],
-      malpositioned:[''],
-      dentalflourosis:[''],
-      missingteeth:[''],
-      incisors:[''],
-      canines:[''],
-      premolars:[''],
-      molars:[''],
-      deciduousteeth:[''],
-      advice:[''],
-      remarks:['']
+      periodontal: [''],
+      dentalCaries: [''],
+      periodontal2: [''],
+      orthodontic: [''],
+      extration: [''],
+      spacemaintainer: [''],
+      oralhygiene: [''],
+      sugarintake: [''],
+      timebrushed: [''],
+      thumbsucking: [''],
+      malpositioned: [''],
+      dentalflourosis: [''],
+      missingteeth: [''],
+      incisors: [''],
+      canines: [''],
+      premolars: [''],
+      molars: [''],
+      deciduousteeth: [''],
+      advice: [''],
+      remarks: ['']
     });
-    this.dentalForm.valueChanges.subscribe(res=> {
+    this.dentalForm.valueChanges.subscribe(res => {
       console.log(res);
     });
   }

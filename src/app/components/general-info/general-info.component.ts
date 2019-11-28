@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { GeneralInfo } from 'src/app/models/stufit';
 import { StufitService } from '../services/stufit.service';
@@ -41,7 +41,7 @@ export class GeneralInfoComponent implements OnInit {
     });
   }
 
-  saveGeneralInfo() {
+  getData(): GeneralInfo {
     const res = this.generalForm.controls;
     this.model.Name = res.name.value;
     this.model.Address = res.address.value;
@@ -56,9 +56,7 @@ export class GeneralInfoComponent implements OnInit {
     this.model.Siblings = [];
     this.model.Siblings.push({ class: res.sibling1.value, sec: res.sibling1class.value });
     this.model.Siblings.push({ class: res.sibling2.value, sec: res.sibling2class.value });
-
-    console.log(this.model);
-
+    return this.model;
   }
 
 }

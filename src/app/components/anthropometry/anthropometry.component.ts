@@ -56,7 +56,7 @@ export class AnthropometryComponent implements OnInit {
     this.model.Dystrophy = res.dystrophy.value;
     this.model.Endurance = res.endurance.value;
     this.model.Ltlegrange = res.ltlegrange.value;
-    this.model.Neckrange = res.Neckrange.value;
+    this.model.Neckrange = res.neckrange.value;
     this.model.Pain = res.pain.value;
     this.model.Painposition = res.painposition.value;
     this.model.Paintype = res.paintype.value;

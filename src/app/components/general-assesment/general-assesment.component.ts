@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { GeneralAssessment } from 'src/app/models/stufit';
 
 @Component({
   selector: 'app-general-assesment',
@@ -9,6 +10,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class GeneralAssesmentComponent implements OnInit {
 
   generalassessmentForm: FormGroup;
+  model: GeneralAssessment = {};
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -24,13 +26,13 @@ export class GeneralAssesmentComponent implements OnInit {
       clubfoot: [''],
       congenitalcataract: [''],
       congenitaldeafness: [''],
-      congenitalheart:[''],
-      skincondition:[''],
-      otitis:[''],
-      neuromotor:[''],
-      bodytype:[''],
-      advice:[''],
-      remarks:['']
+      congenitalheart: [''],
+      skincondition: [''],
+      otitis: [''],
+      neuromotor: [''],
+      bodytype: [''],
+      advice: [''],
+      remarks: ['']
 
     });
     this.generalassessmentForm.valueChanges.subscribe(res => {
@@ -38,4 +40,23 @@ export class GeneralAssesmentComponent implements OnInit {
     });
   }
 
+  getData(): GeneralAssessment {
+    const res = this.generalassessmentForm.controls;
+    this.model.Chestauscultation = res.chestauscultation.value;
+    this.model.Abdomenpalpitation = res.abdomenpalpitation.value;
+    this.model.Activeinfectious = res.activeinfectious.value;
+    this.model.Cleftlip = res.cleftlip.value;
+    this.model.Clubfoot = res.clubfoot.value;
+    this.model.Congenitalcataract = res.congenitalcataract.value;
+    this.model.Congenitaldeafness = res.congenitaldeafness.value;
+    this.model.Congenitalheart = res.congenitalheart.value;
+    this.model.Skincondition = res.skincondition.value;
+    this.model.Otitis = res.otitis.value;
+    this.model.Neuromotor = res.neuromotor.value;
+    this.model.Bodytype = res.bodytype.value;
+    this.model.Advice = res.advice.value;
+    this.model.Remarks = res.remarks.value;
+
+    return this.model;
+  }
 }

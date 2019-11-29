@@ -21,13 +21,13 @@ export class NewRecordComponent implements OnInit {
   }
 
   save() {
-    console.log(this.generalInfoChild.getData());
-    // this.general.Name = 'Test';
-    // this.service.saveData(this.general).subscribe(res => {
-    //   res.forEach(elem => {
-    //     console.log(elem.payload.doc.data());
-    //   });
-    // });
+    console.log(this.generalInfoChild.getData(), this.anthropometryChild.getData());
+    this.general.Name = 'Test';
+    this.service.saveData(this.generalInfoChild.getData()).then(res => {
+
+      console.log(res);
+
+    });
   }
   createPdf() {
     this.pdfService.makePdf();

@@ -16,6 +16,9 @@ import {
   MatButtonModule, MatFormFieldModule, MatInputModule,
   MatDatepickerModule, MatNativeDateModule, MatCheckboxModule, MatRadioModule, MatTableModule
 } from '@angular/material';
+import { ToastrModule } from 'ngx-toastr';
+
+
 import { GeneralInfoComponent } from './components/general-info/general-info.component';
 
 import { AngularFireModule } from '@angular/fire';
@@ -58,6 +61,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
     MatStepperModule,
     MatCardModule,
     MatButtonModule,

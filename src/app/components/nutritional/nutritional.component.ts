@@ -37,9 +37,9 @@ export class NutritionalComponent implements OnInit {
     });
   }
 
-  getData(): Nutritional{
+  getData(): Nutritional {
     const res = this.nutritionalassessmentForm.controls;
-    this.model.Main = res.Main.value;
+    this.model.Main = res.Select.value;
     this.model.Vitamina = res.vitamina.value;
     this.model.Vitamind = res.vitamind.value;
     this.model.Obesity = res.obesity.value;

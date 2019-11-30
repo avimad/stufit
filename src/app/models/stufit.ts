@@ -10,6 +10,7 @@ export interface GeneralInfo {
     MotherPhone?: string;
     Siblings?: { class?: string, sec?: string }[];
 }
+
 export interface Anthropometry {
     Height?: number;
     Weight?: number;
@@ -154,4 +155,15 @@ export interface GeneralAssessment {
     Bodytype?: number;
     Advice?: string;
     Remarks?: string;
+}
+
+export interface UserRecords {
+    generalinfo?: GeneralInfo;
+    anthropometry?: Anthropometry;
+    eyevision?: EyeVision;
+    dentaloral?: DentalOral;
+    audiometry?: Audiometry;
+    nutritional?: Nutritional;
+    pschycological?: Pschycological;
+    generalassesment?: GeneralAssessment;
 }

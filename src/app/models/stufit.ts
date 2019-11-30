@@ -138,7 +138,7 @@ export interface Pschycological {
     Painorburning?: number;
     Advice?: string;
     Remarks?: string;
-    Remark?: string;
+
 }
 export interface GeneralAssessment {
     Chestauscultation?: number;

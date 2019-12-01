@@ -1,5 +1,6 @@
 import { Injectable, ElementRef } from '@angular/core';
 import * as jsPDF from 'jspdf';
+import { GeneralInfo } from 'src/app/models/stufit';
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,10 @@ export class PdfService {
   marginY = 80;
   doc = new jsPDF('p', 'pt', 'a4', true);
 
-  constructor() {}
+  constructor() { }
 
-  makePdf() {
-    this.generalPdf();
+  makePdf(data: GeneralInfo) {
+    this.generalPdf(data);
     this.anthropometryPdf();
     this.eyevisionPdf();
     this.dentaloralPdf();
@@ -75,7 +76,7 @@ export class PdfService {
     );
   }
 
-  generalPdf() {
+  generalPdf(data: GeneralInfo) {
     this.header();
 
     this.doc.setFontStyle('bold');
@@ -88,22 +89,22 @@ export class PdfService {
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('16');
     this.doc.text('Name:', 45, this.marginY + 120);
-    this.doc.text('ADITYA KUMAR', 100, this.marginY + 120);
+    this.doc.text(data.Name, 100, this.marginY + 120);
 
-    this.doc.text('StufitID', 45, this.marginY + 160);  this.doc.text('SAPL110118JHS', 110, this.marginY + 160);
+    this.doc.text('StufitID', 45, this.marginY + 160); this.doc.text('SAPL110118JHS', 110, this.marginY + 160);
     this.doc.text('Class', 45, this.marginY + 200); this.doc.text('9th-A', 110, this.marginY + 200);
     this.doc.text(`Mother's Name`, 45, this.marginY + 240); this.doc.text('Mrs.?KUSHUM YADAV', 180, this.marginY + 240);
     this.doc.text(`Father's Name`, 45, this.marginY + 280); this.doc.text('Mr.JAGAT SINGH YADAV', 180, this.marginY + 280);
     this.doc.text(`Date Of Birth`, 45, this.marginY + 320); this.doc.text('08/01/2005', 150, this.marginY + 320);
     this.doc.text(`Blood Group`, 45, this.marginY + 360); this.doc.text('O positive', 150, this.marginY + 360);
     this.doc.text(`Address`, 45, this.marginY + 400); this.doc.text('BEHIND SHEERWOOD COLLEGE, KHATI?BABA, JHANSI', 120, this.marginY + 400);
-    this.doc.text(`Email Id`, 45, this.marginY + 460);  this.doc.text('Aditya@gmail.comS', 120, this.marginY + 460);
-    this.doc.text(`Phone No.`, 45, this.marginY + 500); this.doc.text('Phone No.1', 130, this.marginY + 500);  this.doc.text('Phone No.2', 350, this.marginY + 500);
+    this.doc.text(`Email Id`, 45, this.marginY + 460); this.doc.text('Aditya@gmail.comS', 120, this.marginY + 460);
+    this.doc.text(`Phone No.`, 45, this.marginY + 500); this.doc.text('Phone No.1', 130, this.marginY + 500); this.doc.text('Phone No.2', 350, this.marginY + 500);
     this.doc.text(
       `Name of Sibling(s) Studying in the school.`,
       45,
       this.marginY + 540
-    );  this.doc.text('Sbling Name', 50, this.marginY + 580);
+    ); this.doc.text('Sbling Name', 50, this.marginY + 580);
 
     this.footer();
     this.doc.addPage();
@@ -145,7 +146,7 @@ export class PdfService {
 
     this.doc.line(45, 230, 545, 230);
 
-    //staring vision
+    // staring vision
     this.doc.line(45, 280, 545, 280);
     this.doc.line(45, 330, 545, 330);
 

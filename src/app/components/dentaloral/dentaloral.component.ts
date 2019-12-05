@@ -11,7 +11,7 @@ export class DentaloralComponent implements OnInit {
   dentalForm: FormGroup;
   model: DentalOral = {};
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.createForm();

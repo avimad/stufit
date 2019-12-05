@@ -23,6 +23,7 @@ import { GeneralInfoComponent } from './components/general-info/general-info.com
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { AnthropometryComponent } from './components/anthropometry/anthropometry.component';
 import { EyevisionComponent } from './components/eyevision/eyevision.component';
@@ -31,12 +32,14 @@ import { AudiomentryComponent } from './components/audiomentry/audiomentry.compo
 import { NutritionalComponent } from './components/nutritional/nutritional.component';
 import { PschycologicalComponent } from './components/pschycological/pschycological.component';
 import { GeneralAssesmentComponent } from './components/general-assesment/general-assesment.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'add-record', component: NewRecordComponent }
+  { path: 'add-record', component: NewRecordComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
@@ -53,7 +56,8 @@ const routes: Routes = [
     AudiomentryComponent,
     NutritionalComponent,
     PschycologicalComponent,
-    GeneralAssesmentComponent
+    GeneralAssesmentComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +73,7 @@ const routes: Routes = [
     MatInputModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     MatNativeDateModule,
     MatDatepickerModule,
     MatCheckboxModule,

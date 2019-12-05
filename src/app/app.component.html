@@ -1,5 +1,5 @@
 <!-- Page Wrapper -->
-<div id="wrapper">
+<div id="wrapper" *ngIf="!isLoginUrl">
 
   <app-side-bar></app-side-bar>
 
@@ -32,3 +32,4 @@
 
 </div>
 <!-- End of Page Wrapper -->
+<app-login *ngIf="isLoginUrl"></app-login>

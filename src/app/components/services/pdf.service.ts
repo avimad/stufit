@@ -1,6 +1,6 @@
 import { Injectable, ElementRef } from '@angular/core';
 import * as jsPDF from 'jspdf';
-import { GeneralInfo } from 'src/app/models/stufit';
+import { GeneralInfo, UserRecords, EyeVision, Anthropometry, DentalOral, Audiometry, Nutritional, Pschycological, GeneralAssessment } from 'src/app/models/stufit';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +12,15 @@ export class PdfService {
 
   constructor() { }
 
-  makePdf(data: GeneralInfo) {
-    this.generalPdf(data);
-    this.anthropometryPdf();
-    this.eyevisionPdf();
-    this.dentaloralPdf();
-    this.audiomentryPdf();
-    this.nutritionalPdf();
-    this.pschycoPdf();
-    this.generalasessmentPdf();
+  makePdf(data: UserRecords) {
+    this.generalPdf(data.generalinfo);
+    this.anthropometryPdf(data.anthropometry);
+    this.eyevisionPdf(data.eyevision);
+    this.dentaloralPdf(data.dentaloral);
+    this.audiomentryPdf(data.audiometry);
+    this.nutritionalPdf(data.nutritional);
+    this.pschycoPdf(data.pschycological);
+    this.generalasessmentPdf(data.generalassesment);
     this.doc.save('general.pdf');
   }
 
@@ -91,26 +91,26 @@ export class PdfService {
     this.doc.text('Name:', 45, this.marginY + 120);
     this.doc.text(data.Name, 100, this.marginY + 120);
 
-    this.doc.text('StufitID', 45, this.marginY + 160); this.doc.text('SAPL110118JHS', 110, this.marginY + 160);
-    this.doc.text('Class', 45, this.marginY + 200); this.doc.text('9th-A', 110, this.marginY + 200);
-    this.doc.text(`Mother's Name`, 45, this.marginY + 240); this.doc.text('Mrs.?KUSHUM YADAV', 180, this.marginY + 240);
-    this.doc.text(`Father's Name`, 45, this.marginY + 280); this.doc.text('Mr.JAGAT SINGH YADAV', 180, this.marginY + 280);
-    this.doc.text(`Date Of Birth`, 45, this.marginY + 320); this.doc.text('08/01/2005', 150, this.marginY + 320);
-    this.doc.text(`Blood Group`, 45, this.marginY + 360); this.doc.text('O positive', 150, this.marginY + 360);
-    this.doc.text(`Address`, 45, this.marginY + 400); this.doc.text('BEHIND SHEERWOOD COLLEGE, KHATI?BABA, JHANSI', 120, this.marginY + 400);
-    this.doc.text(`Email Id`, 45, this.marginY + 460); this.doc.text('Aditya@gmail.comS', 120, this.marginY + 460);
-    this.doc.text(`Phone No.`, 45, this.marginY + 500); this.doc.text('Phone No.1', 130, this.marginY + 500); this.doc.text('Phone No.2', 350, this.marginY + 500);
+    this.doc.text('StufitID', 45, this.marginY + 160); this.doc.text(data.StufitID, 110, this.marginY + 160);
+    this.doc.text('Class', 45, this.marginY + 200); this.doc.text(' ', 110, this.marginY + 200);
+    this.doc.text(`Mother's Name`, 45, this.marginY + 240); this.doc.text(data.MotherName, 180, this.marginY + 240);
+    this.doc.text(`Father's Name`, 45, this.marginY + 280); this.doc.text(data.FatherName, 180, this.marginY + 280);
+    this.doc.text(`Date Of Birth`, 45, this.marginY + 320); this.doc.text(data.DOB, 150, this.marginY + 320);
+    this.doc.text(`Blood Group`, 45, this.marginY + 360); this.doc.text('', 150, this.marginY + 360);
+    this.doc.text(`Address`, 45, this.marginY + 400); this.doc.text(data.Address, 120, this.marginY + 400);
+    this.doc.text(`Email Id`, 45, this.marginY + 460); this.doc.text(data.Email, 120, this.marginY + 460);
+    this.doc.text(`Phone No.`, 45, this.marginY + 500); this.doc.text(data.FatherPhone, 130, this.marginY + 500); this.doc.text('Phone No.2', 350, this.marginY + 500);
     this.doc.text(
       `Name of Sibling(s) Studying in the school.`,
       45,
       this.marginY + 540
-    ); this.doc.text('Sbling Name', 50, this.marginY + 580);
+    ); this.doc.text(data.Siblings[0].class, 50, this.marginY + 580);
 
     this.footer();
     this.doc.addPage();
   }
 
-  eyevisionPdf() {
+  eyevisionPdf(data: EyeVision) {
     this.doc.addPage();
     this.header();
     this.footer();
@@ -331,7 +331,7 @@ export class PdfService {
 
   }
 
-  anthropometryPdf() {
+  anthropometryPdf(data: Anthropometry) {
     this.header();
 
     this.doc.setFontStyle('bold');
@@ -344,107 +344,107 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Height:', 45, this.marginY + 70);
     this.doc.setFontStyle('normal');
-    this.doc.text('5.5 Ft', 105, this.marginY + 70);
+    this.doc.text(data.Height, 105, this.marginY + 70);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Width:', 190, this.marginY + 70);
     this.doc.setFontStyle('normal');
-    this.doc.text('5.5 Kg', 250, this.marginY + 70);
+    this.doc.text(data.Weight, 250, this.marginY + 70);
 
     this.doc.setFontStyle('bold');
     this.doc.text('BMI:', 335, this.marginY + 70);
     this.doc.setFontStyle('normal');
-    this.doc.text('14 Kg/m', 395, this.marginY + 70);
+    this.doc.text(data.Bmi, 395, this.marginY + 70);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Posture:', 45, this.marginY + 110);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 105, this.marginY + 110);
+    this.doc.text(data.Posture, 105, this.marginY + 110);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Blood Pressure:', 190, this.marginY + 110);
     this.doc.setFontStyle('normal');
-    this.doc.text('107/70', 300, this.marginY + 110);
+    this.doc.text(data.Bloodpressure, 300, this.marginY + 110);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Pulse Rate:', 45, this.marginY + 150);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 125, this.marginY + 150);
+    this.doc.text(data.Pulserate, 125, this.marginY + 150);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Shoulder Range of Motion:', 45, this.marginY + 190);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 235, this.marginY + 190);
+    this.doc.text(data.Shoulderrange, 235, this.marginY + 190);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Neck Range of Motion:', 45, this.marginY + 230);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 215, this.marginY + 230);
+    this.doc.text(data.Neckrange, 215, this.marginY + 230);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Rt. Leg Range of Motion:', 45, this.marginY + 270);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 225, this.marginY + 270);
+    this.doc.text(data.Rtlegrange, 225, this.marginY + 270);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Lt. Leg Range of Motion:', 45, this.marginY + 310);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 225, this.marginY + 310);
+    this.doc.text(data.Ltlegrange, 225, this.marginY + 310);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Dystrophy:', 45, this.marginY + 350);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 130, this.marginY + 350);
+    this.doc.text(data.Dystrophy, 130, this.marginY + 350);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Atrophy:', 250, this.marginY + 350);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 315, this.marginY + 350);
+    this.doc.text(data.Atrophy, 315, this.marginY + 350);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Stamina:', 45, this.marginY + 390);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 110, this.marginY + 390);
+    this.doc.text(data.Stamina, 110, this.marginY + 390);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Endurance:', 45, this.marginY + 430);
     this.doc.setFontStyle('normal');
-    this.doc.text('Heavy', 130, this.marginY + 430);
+    this.doc.text(data.Endurance, 130, this.marginY + 430);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Pain:', 45, this.marginY + 470);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 90, this.marginY + 470);
+    this.doc.text(data.Pain, 90, this.marginY + 470);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Pain Position:', 250, this.marginY + 470);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 350, this.marginY + 470);
+    this.doc.text(data.Painposition, 350, this.marginY + 470);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Spasm:', 45, this.marginY + 510);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 100, this.marginY + 510);
+    this.doc.text(data.Spasm, 100, this.marginY + 510);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Spasm Position:', 250, this.marginY + 510);
     this.doc.setFontStyle('normal');
-    this.doc.text('Normal', 370, this.marginY + 510);
+    this.doc.text(data.Spasmposition, 370, this.marginY + 510);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Advice:', 45, this.marginY + 540);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 100, this.marginY + 540);
+    this.doc.text(data.Advice, 100, this.marginY + 540);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Remarks:', 45, this.marginY + 620);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 120, this.marginY + 620);
+    this.doc.text(data.Remarks, 120, this.marginY + 620);
 
     this.footer();
   }
 
-  dentaloralPdf() {
+  dentaloralPdf(data: DentalOral) {
     this.doc.addPage();
     this.header();
     this.footer();
@@ -459,67 +459,67 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Periodontal:', 45, this.marginY + 70);
     this.doc.setFontStyle('normal');
-    this.doc.text('Average', 140, this.marginY + 70);
+    this.doc.text(data.Periodontal, 140, this.marginY + 70);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Dental Caries:', 45, this.marginY + 100);
     this.doc.setFontStyle('normal');
-    this.doc.text('Advance', 150, this.marginY + 100);
+    this.doc.text(data.DentalCaries, 150, this.marginY + 100);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Periodontal :', 45, this.marginY + 130);
     this.doc.setFontStyle('normal');
-    this.doc.text('Moderate', 140, this.marginY + 130);
+    this.doc.text(data.Periodontal2, 140, this.marginY + 130);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Orthodontic Correction :', 45, this.marginY + 160);
     this.doc.setFontStyle('normal');
-    this.doc.text('Advised', 215, this.marginY + 160);
+    this.doc.text(data.Orthodontic, 215, this.marginY + 160);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Extraction :', 45, this.marginY + 190);
     this.doc.setFontStyle('normal');
-    this.doc.text('Advised', 120, this.marginY + 190);
+    this.doc.text(data.Extration, 120, this.marginY + 190);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Space Maintainer :', 45, this.marginY + 220);
     this.doc.setFontStyle('normal');
-    this.doc.text('Not Advised', 170, this.marginY + 220);
+    this.doc.text(data.Spacemaintainer, 170, this.marginY + 220);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Oral Hygiene Status:', 45, this.marginY + 250);
     this.doc.setFontStyle('normal');
-    this.doc.text('Poor', 190, this.marginY + 250);
+    this.doc.text(data.Oralhygiene, 190, this.marginY + 250);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Sugar Intake:', 45, this.marginY + 280);
     this.doc.setFontStyle('normal');
-    this.doc.text('Yes', 150, this.marginY + 280);
+    this.doc.text(data.Sugarintake, 150, this.marginY + 280);
 
     this.doc.setFontStyle('bold');
     this.doc.text('No. of time Brushed :', 45, this.marginY + 310);
     this.doc.setFontStyle('normal');
-    this.doc.text('Once A Day', 190, this.marginY + 310);
+    this.doc.text(data.Timebrushed, 190, this.marginY + 310);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Thumb Sucking:', 45, this.marginY + 340);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 170, this.marginY + 340);
+    this.doc.text(data.Thumbsucking, 170, this.marginY + 340);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Malpositioned Teeth :', 45, this.marginY + 370);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 190, this.marginY + 370);
+    this.doc.text(data.Malpositioned, 190, this.marginY + 370);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Dental Flourosis:', 45, this.marginY + 400);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 170, this.marginY + 400);
+    this.doc.text(data.Dentalflourosis, 170, this.marginY + 400);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Missing Teeth :', 45, this.marginY + 430);
     this.doc.setFontStyle('normal');
-    this.doc.text('No', 150, this.marginY + 430);
+    this.doc.text(data.Missingteeth, 150, this.marginY + 430);
 
     this.doc.setFontStyle('bold');
     this.doc.text('No. of Teeth :', 45, this.marginY + 460);
@@ -527,40 +527,40 @@ export class PdfService {
     this.doc.setFontStyle('normal');
     this.doc.text('Incisors-', 140, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('8', 194, this.marginY + 460);
+    this.doc.text(data.Incisors, 194, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
     this.doc.text('Canines-', 205, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('4', 265, this.marginY + 460);
+    this.doc.text(data.Canines, 265, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
     this.doc.text('Premolars-', 280, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('8', 350, this.marginY + 460);
+    this.doc.text(data.Premolars, 350, this.marginY + 460);
 
     this.doc.setFontStyle('Molars');
     this.doc.text('Molars-', 365, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('7', 410, this.marginY + 460);
+    this.doc.text(data.Molars, 410, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
     this.doc.text('Deciduous Teeth-', 425, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text('Yes', 530, this.marginY + 460);
+    this.doc.text(data.Deciduousteeth, 530, this.marginY + 460);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Advice:', 45, this.marginY + 500);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 100, this.marginY + 500);
+    this.doc.text(data.Advice, 100, this.marginY + 500);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Remarks:', 45, this.marginY + 560);
     this.doc.setFontStyle('normal');
-    this.doc.text('text', 120, this.marginY + 560);
+    this.doc.text(data.Remarks, 120, this.marginY + 560);
   }
 
-  audiomentryPdf() {
+  audiomentryPdf(data: Audiometry) {
     this.doc.addPage();
     this.header();
     this.footer();
@@ -657,7 +657,7 @@ export class PdfService {
     this.doc.text('text', 120, this.marginY + 570);
   }
 
-  nutritionalPdf() {
+  nutritionalPdf(data: Nutritional) {
     this.doc.addPage();
     this.header();
     this.footer();
@@ -736,7 +736,7 @@ export class PdfService {
     this.doc.text('text', 120, this.marginY + 460);
   }
 
-  pschycoPdf() {
+  pschycoPdf(data: Pschycological) {
     this.doc.addPage();
     this.header();
     this.footer();
@@ -864,7 +864,7 @@ export class PdfService {
     this.doc.text('text', 120, this.marginY + 645);
   }
 
-  generalasessmentPdf() {
+  generalasessmentPdf(data: GeneralAssessment) {
     this.doc.addPage();
     this.header();
     this.footer();

@@ -54,7 +54,7 @@ export class NewRecordComponent implements OnInit {
     });
   }
   createPdf() {
-    this.pdfService.makePdf(this.generalInfoChild.getData());
+    this.pdfService.makePdf(this.data);
   }
 
 

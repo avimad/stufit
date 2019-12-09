@@ -4,6 +4,8 @@ export interface GeneralInfo {
     MotherName?: string;
     FatherName?: string;
     DOB?: string;
+    Class?: string;
+    BloodGroup?: string;
     Address?: string;
     Email?: string;
     FatherPhone?: string;
@@ -166,4 +168,9 @@ export interface UserRecords {
     nutritional?: Nutritional;
     pschycological?: Pschycological;
     generalassesment?: GeneralAssessment;
+}
+
+export interface GetRecord {
+    docId?: string;
+    generalinfo?: GeneralInfo;
 }

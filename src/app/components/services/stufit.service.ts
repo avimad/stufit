@@ -19,5 +19,8 @@ export class StufitService {
   getData() {
     return this.db.collection('userrecords').get();
   }
+  getDataById(id) {
+    return this.db.collection('userrecords').doc(id).get();
+  }
 
 }

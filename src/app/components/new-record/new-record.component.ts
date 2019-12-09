@@ -35,9 +35,6 @@ export class NewRecordComponent implements OnInit {
   constructor(private service: StufitService, private pdfService: PdfService, private notification: ToastrService) { }
 
   ngOnInit() {
-    this.service.getData().subscribe(res => {
-      console.log(res.docs[1].data());
-    });
   }
 
   save() {

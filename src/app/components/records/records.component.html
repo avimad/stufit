@@ -1,0 +1,32 @@
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">School Records</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Stufit ID</th>
+                        <th>Name</th>
+                        <th>Date of birth</th>
+                        <th>Father's Name</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let record of records">
+                        <td>{{record.generalinfo.StufitID}}</td>
+                        <td>{{record.generalinfo.Name}}</td>
+                        <td>{{record.generalinfo.DOB | date}}</td>
+                        <td>{{record.generalinfo.FatherName}}</td>
+                        <td><button mat-raised-button color="primary" (click)="Download(record.docId)">Download Pdf</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

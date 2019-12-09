@@ -25,6 +25,8 @@ export class GeneralInfoComponent implements OnInit {
       mothername: [''],
       fathername: [''],
       dob: [''],
+      class: [''],
+      bloodgroup: [''],
       address: [''],
       email: [''],
       contactno: [''],
@@ -45,13 +47,15 @@ export class GeneralInfoComponent implements OnInit {
     const res = this.generalForm.controls;
     this.model.Name = res.name.value;
     this.model.Address = res.address.value;
-    this.model.DOB = res.dob.value;
+    this.model.DOB = res.dob.value.toString();
     this.model.Email = res.email.value;
     this.model.FatherName = res.fathername.value;
     this.model.FatherPhone = res.fathercontact.value;
     this.model.MotherName = res.mothername.value;
     this.model.MotherPhone = res.mothercontact.value;
     this.model.StufitID = res.stufitId.value;
+    this.model.BloodGroup = res.bloodgroup.value;
+    this.model.Class = res.class.value;
 
     this.model.Siblings = [];
     this.model.Siblings.push({ class: res.sibling1.value, sec: res.sibling1class.value });

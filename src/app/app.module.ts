@@ -33,11 +33,12 @@ import { NutritionalComponent } from './components/nutritional/nutritional.compo
 import { PschycologicalComponent } from './components/pschycological/pschycological.component';
 import { GeneralAssesmentComponent } from './components/general-assesment/general-assesment.component';
 import { LoginComponent } from './components/login/login.component';
+import { RecordsComponent } from './components/records/records.component';
 
 
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', component: RecordsComponent },
   { path: 'add-record', component: NewRecordComponent },
   { path: 'login', component: LoginComponent }
 ];
@@ -57,7 +58,8 @@ const routes: Routes = [
     NutritionalComponent,
     PschycologicalComponent,
     GeneralAssesmentComponent,
-    LoginComponent
+    LoginComponent,
+    RecordsComponent
   ],
   imports: [
     BrowserModule,

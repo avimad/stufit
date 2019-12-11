@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Audiometry } from 'src/app/models/stufit';
 
 @Component({
@@ -11,7 +11,7 @@ export class AudiomentryComponent implements OnInit {
   audiometryForm: FormGroup;
   model: Audiometry = {};
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
     this.createForm();
@@ -19,20 +19,20 @@ export class AudiomentryComponent implements OnInit {
 
   createForm() {
     this.audiometryForm = this.fb.group({
-      speechmilestones: [''],
-      comprehension: [''],
-      expression: [''],
-      modeofcommunication: [''],
-      auditoryskills: [''],
-      parentsopinion: [''],
-      hearingloss: [''],
-      tinnitus: [''],
-      lteperiodontal: [''],
-      rteperiodontal: [''],
-      respondonname: [''],
-      hearingassessment: [''],
-      blwax: [''],
-      medicalhistory: [''],
+      speechmilestones: ['', Validators.required],
+      comprehension: ['', Validators.required],
+      expression: ['', Validators.required],
+      modeofcommunication: ['', Validators.required],
+      auditoryskills: ['', Validators.required],
+      parentsopinion: ['', Validators.required],
+      hearingloss: ['', Validators.required],
+      tinnitus: ['', Validators.required],
+      lteperiodontal: ['', Validators.required],
+      rteperiodontal: ['', Validators.required],
+      respondonname: ['', Validators.required],
+      hearingassessment: ['', Validators.required],
+      blwax: ['', Validators.required],
+      medicalhistory: ['', Validators.required],
       advice: [''],
       remarks: ['']
 

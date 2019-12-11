@@ -38,17 +38,30 @@ export class NewRecordComponent implements OnInit {
   }
 
   save() {
-    this.data.generalinfo = this.generalInfoChild.getData();
-    this.data.anthropometry = this.anthropometryChild.getData();
-    this.data.eyevision = this.eyevisionyChild.getData();
-    this.data.dentaloral = this.dentaloralChild.getData();
-    this.data.audiometry = this.audiometryChild.getData();
-    this.data.nutritional = this.nutritionalChild.getData();
-    this.data.pschycological = this.pschycologicalChild.getData();
-    this.data.generalassesment = this.assesmentChild.getData();
-    this.service.saveData(this.data).then(res => {
-      this.notification.success('Record added successfully');
-    });
+    if (this.generalInfoChild.generalForm.valid &&
+      this.anthropometryChild.anhthropometryForm.valid &&
+      this.eyevisionyChild.eyevisionForm.valid &&
+      this.dentaloralChild.dentalForm.valid &&
+      this.audiometryChild.audiometryForm.valid &&
+      this.nutritionalChild.nutritionalassessmentForm.valid &&
+      this.pschycologicalChild.pschycologicalForm.valid &&
+      this.assesmentChild.generalassessmentForm.valid) {
+
+      this.data.generalinfo = this.generalInfoChild.getData();
+      this.data.anthropometry = this.anthropometryChild.getData();
+      this.data.eyevision = this.eyevisionyChild.getData();
+      this.data.dentaloral = this.dentaloralChild.getData();
+      this.data.audiometry = this.audiometryChild.getData();
+      this.data.nutritional = this.nutritionalChild.getData();
+      this.data.pschycological = this.pschycologicalChild.getData();
+      this.data.generalassesment = this.assesmentChild.getData();
+      this.service.saveData(this.data).then(res => {
+        this.pdfService.makePdf(this.data);
+        this.notification.success('Record added successfully');
+      });
+    } else {
+      this.notification.error('Please fill all required fields');
+    }
   }
   createPdf() {
     this.pdfService.makePdf(this.data);

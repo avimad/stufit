@@ -1,5 +1,5 @@
 <mat-card>
-    <mat-horizontal-stepper #stepper>
+    <mat-horizontal-stepper [linear]="true" #stepper>
         <mat-step>
             <ng-template matStepLabel>General</ng-template>
             <app-general-info></app-general-info>
@@ -95,17 +95,18 @@
               </mat-form-field> -->
                 <div>
                     <button mat-raised-button color="primary" matStepperPrevious>Back</button>
-                    <button mat-raised-button color="primary" matStepperNext>Next</button>
+                    <!-- <button mat-raised-button color="primary" matStepperNext>Next</button> -->
+                    <button mat-raised-button color="primary" (click)="save()">Save & Download Pdf</button>
                 </div>
             </form>
         </mat-step>
 
     </mat-horizontal-stepper>
-    <mat-card-actions>
+    <!-- <mat-card-actions>
         <div>
             <button mat-raised-button color="primary" (click)="createPdf()">Download Pdf</button>
             <button mat-raised-button color="primary" (click)="save()">Save Record</button>
         </div>
-    </mat-card-actions>
+    </mat-card-actions> -->
 
 </mat-card>

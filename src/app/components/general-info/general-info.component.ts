@@ -22,15 +22,15 @@ export class GeneralInfoComponent implements OnInit {
     this.generalForm = this.fb.group({
       name: ['', Validators.required],
       stufitId: ['', Validators.required],
-      mothername: [''],
-      fathername: [''],
-      dob: [''],
-      class: [''],
-      bloodgroup: [''],
-      address: [''],
-      email: [''],
-      contactno: [''],
-      fathercontact: [''],
+      mothername: ['', Validators.required],
+      fathername: ['', Validators.required],
+      dob: ['', Validators.required],
+      class: ['', Validators.required],
+      bloodgroup: ['', Validators.required],
+      address: ['', Validators.required],
+      email: ['', Validators.required],
+      contactno: ['', Validators.required],
+      fathercontact: ['', Validators.required],
       mothercontact: [''],
       sibling1: [''],
       sibling1class: [''],
@@ -38,7 +38,6 @@ export class GeneralInfoComponent implements OnInit {
       sibling2class: ['']
     });
     this.generalForm.valueChanges.subscribe(res => {
-
       console.log(this.model);
     });
   }

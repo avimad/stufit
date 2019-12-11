@@ -37,14 +37,8 @@ export class PdfService {
       45,
       this.marginY + 705
     );
-
     this.doc.text(
-      `Doctor's Signature  ................................`,
-      350,
-      this.marginY + 680
-    );
-    this.doc.text(
-      `Doctor's Name        ................................`,
+      `Authorized signatory  ................................`,
       350,
       this.marginY + 705
     );
@@ -62,7 +56,7 @@ export class PdfService {
 
     const watermark = new Image();
     watermark.src = 'assets/img/watermark.PNG';
-    this.doc.addImage(img, 'PNG', 30, 20, 140, 90);
+    this.doc.addImage(img, 'PNG', 210, 15, 140, 80);
     this.doc.addImage(
       watermark,
       'PNG',
@@ -88,40 +82,50 @@ export class PdfService {
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
-    this.doc.text('Name:', 45, this.marginY + 120);
     this.doc.text(data.Name, 100, this.marginY + 120);
+    this.doc.text(data.StufitID, 110, this.marginY + 160);
+    this.doc.text(data.Class, 110, this.marginY + 200);
+    this.doc.text(data.MotherName, 180, this.marginY + 240);
+    this.doc.text(data.FatherName, 180, this.marginY + 280);
+    this.doc.text(data.DOB, 150, this.marginY + 320);
+    this.doc.text(data.BloodGroup, 150, this.marginY + 360);
+    this.doc.text(data.Address, 120, this.marginY + 400);
+    this.doc.text(data.Email, 120, this.marginY + 460);
+    this.doc.text(data.FatherPhone, 130, this.marginY + 500);
+    this.doc.text(data.Siblings[0].class, 50, this.marginY + 580);
 
-    this.doc.text('StufitID', 45, this.marginY + 160); this.doc.text(data.StufitID, 110, this.marginY + 160);
-    this.doc.text('Class', 45, this.marginY + 200); this.doc.text(data.Class, 110, this.marginY + 200);
-    this.doc.text(`Mother's Name`, 45, this.marginY + 240); this.doc.text(data.MotherName, 180, this.marginY + 240);
-    this.doc.text(`Father's Name`, 45, this.marginY + 280); this.doc.text(data.FatherName, 180, this.marginY + 280);
-    this.doc.text(`Date Of Birth`, 45, this.marginY + 320); this.doc.text(data.DOB, 150, this.marginY + 320);
-    this.doc.text(`Blood Group`, 45, this.marginY + 360); this.doc.text(data.BloodGroup, 150, this.marginY + 360);
-    this.doc.text(`Address`, 45, this.marginY + 400); this.doc.text(data.Address, 120, this.marginY + 400);
-    this.doc.text(`Email Id`, 45, this.marginY + 460); this.doc.text(data.Email, 120, this.marginY + 460);
-    this.doc.text(`Phone No.`, 45, this.marginY + 500); this.doc.text(data.FatherPhone, 130, this.marginY + 500);
-    this.doc.text('Phone No.2', 350, this.marginY + 500);
+    this.doc.setFontStyle('bold');
+    this.doc.setFontSize('14');
+    this.doc.text('Name:', 45, this.marginY + 120);
+    this.doc.text('StufitID:', 45, this.marginY + 160); 
+    this.doc.text('Class:', 45, this.marginY + 200); 
+    this.doc.text(`Mother's Name:`, 45, this.marginY + 240); 
+    this.doc.text(`Father's Name:`, 45, this.marginY + 280); 
+    this.doc.text(`Date Of Birth:`, 45, this.marginY + 320); 
+    this.doc.text(`Blood Group:`, 45, this.marginY + 360); 
+    this.doc.text(`Address:`, 45, this.marginY + 400);   
+    this.doc.text(`Email Id:`, 45, this.marginY + 460); 
+    this.doc.text(`Phone No.:`, 45, this.marginY + 500); 
+    this.doc.text('Phone No.2:', 350, this.marginY + 500);
     this.doc.text(
       `Name of Sibling(s) Studying in the school.`,
       45,
       this.marginY + 540
     );
-    this.doc.text(data.Siblings[0].class, 50, this.marginY + 580);
-
+   
     this.footer();
     this.doc.addPage();
   }
 
   eyevisionPdf(data: EyeVision) {
-    this.doc.addPage();
+
     this.header();
-    this.footer();
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
     this.doc.text(
-      'EYE & VISION ASSESSMENT {16 Parameteres}',
-      120,
+      'EYE & VISION ASSESSMENT',
+      180,
       this.marginY + 40
     );
 
@@ -211,44 +215,44 @@ export class PdfService {
 
     //value of rt and lt eye next value plus 50 in y-axis
     this.doc.setFontStyle('normal');
-    this.doc.text('6/6', 180, 273);
+    this.doc.text(data.Visionrteye, 180, 273);
     this.doc.setFontStyle('normal');
-    this.doc.text('6/6', 255, 273);
+    this.doc.text(data.Visionlteye, 255, 273);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 175, 323);
+    this.doc.text(data.Refractionrteye, 175, 323);
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 250, 323);
+    this.doc.text(data.Refractionlteye, 250, 323);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 175, 373);
+    this.doc.text(data.Colourvisionrteye, 175, 373);
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 250, 373);
+    this.doc.text(data.Colourvisionlteye, 250, 373);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 175, 423);
+    this.doc.text(data.Diseaserteye, 175, 423);
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 250, 423);
+    this.doc.text(data.Diseaselteye, 250, 423);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 175, 473);
+    this.doc.text(data.Squintrteye, 175, 473);
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 250, 473);
+    this.doc.text(data.Squintlteye, 250, 473);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 175, 523);
+    this.doc.text(data.Microeyeballrteye, 175, 523);
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 250, 523);
+    this.doc.text(data.Microeyeballlteye, 250, 523);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 175, 573);
+    this.doc.text(data.Ptosisrteye, 175, 573);
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 250, 573);
+    this.doc.text(data.Ptosislteye, 250, 573);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 175, 623);
+    this.doc.text(data.Nystgmusrteye, 175, 623);
     this.doc.setFontStyle('normal');
-    this.doc.text('NAD', 250, 623);
+    this.doc.text(data.Nystgmuslteye, 250, 623);
 
 
 
@@ -330,6 +334,8 @@ export class PdfService {
     this.doc.text('Remarks:', 45, this.marginY + 650);
     this.doc.setFontStyle('normal');
     this.doc.text('text', 120, this.marginY + 650);
+    this.footer();
+    this.doc.addPage();
 
   }
 
@@ -338,7 +344,7 @@ export class PdfService {
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('ANTHROPOMETRY - {17 Parameters}', 120, this.marginY + 40);
+    this.doc.text('ANTHROPOMETRY', 200, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -444,16 +450,16 @@ export class PdfService {
     this.doc.text(data.Remarks, 120, this.marginY + 620);
 
     this.footer();
+    this.doc.addPage();
   }
 
   dentaloralPdf(data: DentalOral) {
-    this.doc.addPage();
+   
     this.header();
-    this.footer();
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('Dental & Oral Assesment Module', 120, this.marginY + 40);
+    this.doc.text('Dental & Oral Assesment Module', 140, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -532,24 +538,24 @@ export class PdfService {
     this.doc.text(data.Incisors, 194, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('Canines-', 205, this.marginY + 460);
+    this.doc.text('Canines-', 225, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text(data.Canines, 265, this.marginY + 460);
+    this.doc.text(data.Canines, 285, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('Premolars-', 280, this.marginY + 460);
+    this.doc.text('Premolars-', 310, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text(data.Premolars, 350, this.marginY + 460);
+    this.doc.text(data.Premolars, 390, this.marginY + 460);
 
     this.doc.setFontStyle('Molars');
-    this.doc.text('Molars-', 365, this.marginY + 460);
+    this.doc.text('Molars-', 420, this.marginY + 460);
     this.doc.setFontStyle('normal');
-    this.doc.text(data.Molars, 410, this.marginY + 460);
+    this.doc.text(data.Molars, 470, this.marginY + 460);
 
     this.doc.setFontStyle('normal');
-    this.doc.text('Deciduous Teeth-', 425, this.marginY + 460);
+    this.doc.text('Deciduous Teeth-', 140, this.marginY + 480);
     this.doc.setFontStyle('normal');
-    this.doc.text(data.Deciduousteeth ? 'Yes' : 'No', 530, this.marginY + 460);
+    this.doc.text(data.Deciduousteeth ? 'Yes' : 'No', 220, this.marginY + 480);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Advice:', 45, this.marginY + 500);
@@ -560,16 +566,17 @@ export class PdfService {
     this.doc.text('Remarks:', 45, this.marginY + 560);
     this.doc.setFontStyle('normal');
     this.doc.text(data.Remarks, 120, this.marginY + 560);
+    this.footer();
+    this.doc.addPage();
   }
 
   audiomentryPdf(data: Audiometry) {
-    this.doc.addPage();
+   
     this.header();
-    this.footer();
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('Audiometry & Speech Therapy Module {13 Parameteres}', 80, this.marginY + 40);
+    this.doc.text('Audiometry & Speech Therapy Module', 120, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -657,16 +664,19 @@ export class PdfService {
     this.doc.text('Remarks:', 45, this.marginY + 570);
     this.doc.setFontStyle('normal');
     this.doc.text(data.Remarks, 120, this.marginY + 570);
+
+    this.footer();
+    this.doc.addPage();
   }
 
   nutritionalPdf(data: Nutritional) {
-    this.doc.addPage();
+    
     this.header();
-    this.footer();
+    
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('Nutritional Assessment Module { 7 Parameters }', 80, this.marginY + 40);
+    this.doc.text('Nutritional Assessment Module', 140, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -736,16 +746,19 @@ export class PdfService {
     this.doc.text('Remarks:', 45, this.marginY + 460);
     this.doc.setFontStyle('normal');
     this.doc.text(data.Remarks, 120, this.marginY + 460);
+
+    this.footer();
+    this.doc.addPage();
   }
 
   pschycoPdf(data: Pschycological) {
-    this.doc.addPage();
+  
     this.header();
-    this.footer();
+ 
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('Pschycological Assesment Module { 17 Parameters }', 80, this.marginY + 40);
+    this.doc.text('Pschycological Assesment Module', 140, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -834,7 +847,7 @@ export class PdfService {
     this.doc.setFontStyle('bold');
     this.doc.text('Delay in Menstruation Cyclese :', 260, this.marginY + 490);
     this.doc.setFontStyle('normal');
-    this.doc.text(data.Delayinmenstruation, 400, this.marginY + 490);
+    this.doc.text(data.Delayinmenstruation, 450, this.marginY + 490);
 
     this.doc.setFontStyle('bold');
     this.doc.text('Irregular Periods :', 45, this.marginY + 520);
@@ -864,16 +877,18 @@ export class PdfService {
     this.doc.text('Remarks:', 45, this.marginY + 645);
     this.doc.setFontStyle('normal');
     this.doc.text(data.Remarks, 120, this.marginY + 645);
+
+    this.footer();
+    this.doc.addPage();
   }
 
   generalasessmentPdf(data: GeneralAssessment) {
-    this.doc.addPage();
+  
     this.header();
-    this.footer();
 
     this.doc.setFontStyle('bold');
     this.doc.setFontSize('18');
-    this.doc.text('General Assessment Module {12 Parameters}', 100, this.marginY + 40);
+    this.doc.text('General Assessment Module', 140, this.marginY + 40);
 
     this.doc.setFontStyle('normal');
     this.doc.setFontSize('14');
@@ -951,5 +966,8 @@ export class PdfService {
     this.doc.text('Remarks:', 45, this.marginY + 610);
     this.doc.setFontStyle('normal');
     this.doc.text(data.Remarks, 115, this.marginY + 610);
+
+    this.footer();
+    
   }
 }

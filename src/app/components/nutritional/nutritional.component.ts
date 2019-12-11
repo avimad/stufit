@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Nutritional } from 'src/app/models/stufit';
 
 @Component({
@@ -18,17 +18,17 @@ export class NutritionalComponent implements OnInit {
 
   createForm() {
     this.nutritionalassessmentForm = this.fb.group({
-      Select: [''],
-      vitamina: [''],
-      vitamind: [''],
-      obesity: [''],
-      idealbodyweight: [''],
-      idealcaloriesestimation: [''],
-      fats: [''],
-      cabohydrates: [''],
-      proteins: [''],
-      fluidestimation: [''],
-      glasses: [''],
+      Select: ['', Validators.required],
+      vitamina: ['', Validators.required],
+      vitamind: ['', Validators.required],
+      obesity: ['', Validators.required],
+      idealbodyweight: ['', Validators.required],
+      idealcaloriesestimation: ['', Validators.required],
+      fats: ['', Validators.required],
+      cabohydrates: ['', Validators.required],
+      proteins: ['', Validators.required],
+      fluidestimation: ['', Validators.required],
+      glasses: ['', Validators.required],
       advice: [''],
       remarks: ['']
     });

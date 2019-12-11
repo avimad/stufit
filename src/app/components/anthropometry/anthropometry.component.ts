@@ -19,27 +19,27 @@ export class AnthropometryComponent implements OnInit {
 
   createForm() {
     this.anhthropometryForm = this.fb.group({
-      height: [null, Validators.required],
-      weight: [null, Validators.required],
-      bmi: [null, Validators.required],
-      bloodpressure: [null, Validators.required],
-      pulserate: [null, Validators.required],
-      posture: [null, Validators.required],
-      shoulderrange: [null, Validators.required],
-      neckrange: [null, Validators.required],
-      rtlegrange: [null, Validators.required],
-      ltlegrange: [null, Validators.required],
-      dystrophy: [null, Validators.required],
-      atrophy: [null, Validators.required],
-      stamina: [null, Validators.required],
-      endurance: [null, Validators.required],
-      pain: [null, Validators.required],
-      painposition: [null, Validators.required],
-      paintype: [null, Validators.required],
-      spasm: [null, Validators.required],
-      spasmposition: [null, Validators.required],
-      advice: [null, Validators.required],
-      remarks: [null, Validators.required]
+      height: ["", Validators.required],
+      weight: ["", Validators.required],
+      bmi: ["", Validators.required],
+      bloodpressure: ["", Validators.required],
+      pulserate: ["", Validators.required],
+      posture: ["", Validators.required],
+      shoulderrange: ["", Validators.required],
+      neckrange: ["", Validators.required],
+      rtlegrange: ["", Validators.required],
+      ltlegrange: ["", Validators.required],
+      dystrophy: ["", Validators.required],
+      atrophy: ["", Validators.required],
+      stamina: ["", Validators.required],
+      endurance: ["", Validators.required],
+      pain: ["", Validators.required],
+      painposition: ["", Validators.required],
+      paintype: ["", Validators.required],
+      spasm: ["", Validators.required],
+      spasmposition: ["", Validators.required],
+      advice: [""],
+      remarks: [""]
     });
     this.anhthropometryForm.valueChanges.subscribe(res => {
       console.log(res);

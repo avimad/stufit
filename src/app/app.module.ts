@@ -34,6 +34,7 @@ import { PschycologicalComponent } from './components/pschycological/pschycologi
 import { GeneralAssesmentComponent } from './components/general-assesment/general-assesment.component';
 import { LoginComponent } from './components/login/login.component';
 import { RecordsComponent } from './components/records/records.component';
+import { STUFIT_CONFIG } from './config/config';
 
 
 
@@ -82,7 +83,7 @@ const routes: Routes = [
     MatRadioModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [{ provide: STUFIT_CONFIG, useValue: environment }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

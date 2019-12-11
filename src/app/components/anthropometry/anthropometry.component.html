@@ -158,12 +158,12 @@
         <mat-label>Pain: </mat-label>
       </div>
       <div class="col-md-9 example-container">
-        <section class="example-section">
-          <mat-checkbox class="example-margin">Muscular</mat-checkbox>
-          <mat-checkbox class="example-margin">Joints</mat-checkbox>
-          <mat-checkbox class="example-margin">Neurological</mat-checkbox>
-          <mat-checkbox class="example-margin">No Pain</mat-checkbox>
-        </section>
+        <mat-radio-group aria-label="Endurance" formControlName="pain">
+          <mat-radio-button value="Muscular">Muscular </mat-radio-button>
+          <mat-radio-button value="Joints">Joints </mat-radio-button>
+          <mat-radio-button value="Neurological">Neurological </mat-radio-button>
+          <mat-radio-button value=">No Pain">No Pain</mat-radio-button>
+        </mat-radio-group>
       </div>
 
     </div>

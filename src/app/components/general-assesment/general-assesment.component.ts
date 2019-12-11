@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GeneralAssessment } from 'src/app/models/stufit';
 
 @Component({
@@ -19,18 +19,18 @@ export class GeneralAssesmentComponent implements OnInit {
 
   createForm() {
     this.generalassessmentForm = this.fb.group({
-      chestauscultation: [''],
-      abdomenpalpitation: [''],
-      activeinfectious: [''],
-      cleftlip: [''],
-      clubfoot: [''],
-      congenitalcataract: [''],
-      congenitaldeafness: [''],
-      congenitalheart: [''],
-      skincondition: [''],
-      otitis: [''],
-      neuromotor: [''],
-      bodytype: [''],
+      chestauscultation: ['', Validators.required],
+      abdomenpalpitation: ['', Validators.required],
+      activeinfectious: ['', Validators.required],
+      cleftlip: ['', Validators.required],
+      clubfoot: ['', Validators.required],
+      congenitalcataract: ['', Validators.required],
+      congenitaldeafness: ['', Validators.required],
+      congenitalheart: ['', Validators.required],
+      skincondition: ['', Validators.required],
+      otitis: ['', Validators.required],
+      neuromotor: ['', Validators.required],
+      bodytype: ['', Validators.required],
       advice: [''],
       remarks: ['']
 

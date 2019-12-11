@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { DentalOral } from "src/app/models/stufit";
 
 @Component({
@@ -19,24 +19,24 @@ export class DentaloralComponent implements OnInit {
 
   createForm() {
     this.dentalForm = this.fb.group({
-      periodontal: [""],
-      dentalCaries: [""],
-      periodontal2: [""],
-      orthodontic: [""],
-      extration: [""],
-      spacemaintainer: [""],
-      oralhygiene: [""],
-      sugarintake: [""],
-      timebrushed: [""],
-      thumbsucking: [""],
-      malpositioned: [""],
-      dentalflourosis: [""],
-      missingteeth: [""],
-      incisors: [""],
-      canines: [""],
-      premolars: [""],
-      molars: [""],
-      deciduousteeth: [""],
+      periodontal: ["", Validators.required],
+      dentalCaries: ["", Validators.required],
+      periodontal2: ["", Validators.required],
+      orthodontic: ["", Validators.required],
+      extration: ["", Validators.required],
+      spacemaintainer: ["", Validators.required],
+      oralhygiene: ["", Validators.required],
+      sugarintake: ["", Validators.required],
+      timebrushed: ["", Validators.required],
+      thumbsucking: ["", Validators.required],
+      malpositioned: ["", Validators.required],
+      dentalflourosis: ["", Validators.required],
+      missingteeth: ["", Validators.required],
+      incisors: ["", Validators.required],
+      canines: ["", Validators.required],
+      premolars: ["", Validators.required],
+      molars: ["", Validators.required],
+      deciduousteeth: ["", Validators.required],
       advice: [""],
       remarks: [""]
     });

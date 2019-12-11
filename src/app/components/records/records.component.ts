@@ -9,8 +9,8 @@ import { PdfService } from '../services/pdf.service';
   styleUrls: ['./records.component.scss']
 })
 export class RecordsComponent implements OnInit {
-  private records: GetRecord[] = [];
-  private record: GetRecord = {};
+   records: GetRecord[] = [];
+   record: GetRecord = {};
 
   constructor(private service: StufitService, private pdfservice: PdfService) { }
 

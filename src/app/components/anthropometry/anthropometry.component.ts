@@ -19,25 +19,25 @@ export class AnthropometryComponent implements OnInit {
 
   createForm() {
     this.anhthropometryForm = this.fb.group({
-      height: ["", Validators.required],
-      weight: ["", Validators.required],
-      bmi: ["", Validators.required],
-      bloodpressure: ["", Validators.required],
-      pulserate: ["", Validators.required],
-      posture: ["", Validators.required],
-      shoulderrange: ["", Validators.required],
-      neckrange: ["", Validators.required],
-      rtlegrange: ["", Validators.required],
-      ltlegrange: ["", Validators.required],
-      dystrophy: ["", Validators.required],
-      atrophy: ["", Validators.required],
-      stamina: ["", Validators.required],
-      endurance: ["", Validators.required],
-      pain: ["", Validators.required],
-      painposition: ["", Validators.required],
-      paintype: ["", Validators.required],
-      spasm: ["", Validators.required],
-      spasmposition: ["", Validators.required],
+      height: [""],
+      weight: [""],
+      bmi: [""],
+      bloodpressure: [""],
+      pulserate: [""],
+      posture: [""],
+      shoulderrange: [""],
+      neckrange: [""],
+      rtlegrange: [""],
+      ltlegrange: [""],
+      dystrophy: [""],
+      atrophy: [""],
+      stamina: [""],
+      endurance: [""],
+      pain: [""],
+      painposition: [""],
+      paintype: [""],
+      spasm: [""],
+      spasmposition: [""],
       advice: [""],
       remarks: [""]
     });
@@ -47,6 +47,7 @@ export class AnthropometryComponent implements OnInit {
   }
 
   getData(): Anthropometry {
+    this.model = {};
     const res = this.anhthropometryForm.controls;
     this.model.Height = res.height.value;
     this.model.Advice = res.advice.value;

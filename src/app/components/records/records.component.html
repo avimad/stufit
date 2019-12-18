@@ -13,6 +13,7 @@
                         <th>Date of birth</th>
                         <th>Father's Name</th>
                         <th></th>
+                        <th></th>
 
                     </tr>
                 </thead>
@@ -24,6 +25,7 @@
                         <td>{{record.generalinfo.DOB | date}}</td>
                         <td>{{record.generalinfo.FatherName}}</td>
                         <td><button mat-raised-button color="primary" (click)="Download(record.docId)">Download Pdf</button></td>
+                        <td><button mat-raised-button color="warn" (click)="deleteRecord(record.docId)">Delete</button></td>
                     </tr>
                 </tbody>
             </table>

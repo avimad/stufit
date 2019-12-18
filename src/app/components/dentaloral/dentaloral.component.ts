@@ -19,24 +19,24 @@ export class DentaloralComponent implements OnInit {
 
   createForm() {
     this.dentalForm = this.fb.group({
-      periodontal: ["", Validators.required],
-      dentalCaries: ["", Validators.required],
-      periodontal2: ["", Validators.required],
-      orthodontic: ["", Validators.required],
-      extration: ["", Validators.required],
-      spacemaintainer: ["", Validators.required],
-      oralhygiene: ["", Validators.required],
-      sugarintake: ["", Validators.required],
-      timebrushed: ["", Validators.required],
-      thumbsucking: ["", Validators.required],
-      malpositioned: ["", Validators.required],
-      dentalflourosis: ["", Validators.required],
-      missingteeth: ["", Validators.required],
-      incisors: ["", Validators.required],
-      canines: ["", Validators.required],
-      premolars: ["", Validators.required],
-      molars: ["", Validators.required],
-      deciduousteeth: ["", Validators.required],
+      periodontal: [""],
+      dentalCaries: [""],
+      periodontal2: [""],
+      orthodontic: [""],
+      extration: [""],
+      spacemaintainer: [""],
+      oralhygiene: [""],
+      sugarintake: [""],
+      timebrushed: [""],
+      thumbsucking: [""],
+      malpositioned: [""],
+      dentalflourosis: [""],
+      missingteeth: [""],
+      incisors: [""],
+      canines: [""],
+      premolars: [""],
+      molars: [""],
+      deciduousteeth: [""],
       advice: [""],
       remarks: [""]
     });
@@ -46,6 +46,7 @@ export class DentaloralComponent implements OnInit {
   }
 
   getData(): DentalOral {
+    this.model = {};
     const res = this.dentalForm.controls;
     this.model.Periodontal = res.periodontal.value;
     this.model.DentalCaries = res.dentalCaries.value;

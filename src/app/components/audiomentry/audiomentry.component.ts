@@ -19,20 +19,20 @@ export class AudiomentryComponent implements OnInit {
 
   createForm() {
     this.audiometryForm = this.fb.group({
-      speechmilestones: ['', Validators.required],
-      comprehension: ['', Validators.required],
-      expression: ['', Validators.required],
-      modeofcommunication: ['', Validators.required],
-      auditoryskills: ['', Validators.required],
-      parentsopinion: ['', Validators.required],
-      hearingloss: ['', Validators.required],
-      tinnitus: ['', Validators.required],
-      lteperiodontal: ['', Validators.required],
-      rteperiodontal: ['', Validators.required],
-      respondonname: ['', Validators.required],
-      hearingassessment: ['', Validators.required],
-      blwax: ['', Validators.required],
-      medicalhistory: ['', Validators.required],
+      speechmilestones: [''],
+      comprehension: [''],
+      expression: [''],
+      modeofcommunication: [''],
+      auditoryskills: [''],
+      parentsopinion: [''],
+      hearingloss: [''],
+      tinnitus: [''],
+      lteperiodontal: [''],
+      rteperiodontal: [''],
+      respondonname: [''],
+      hearingassessment: [''],
+      blwax: [''],
+      medicalhistory: [''],
       advice: [''],
       remarks: ['']
 
@@ -49,6 +49,7 @@ export class AudiomentryComponent implements OnInit {
   }
 
   getData(): Audiometry {
+    this.model = {};
     const res = this.audiometryForm.controls;
     this.model.Speechmilestones = res.speechmilestones.value;
     this.model.Comprehension = res.comprehension.value;

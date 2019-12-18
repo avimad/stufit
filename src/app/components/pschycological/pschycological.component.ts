@@ -19,23 +19,23 @@ export class PschycologicalComponent implements OnInit {
 
   createForm() {
     this.pschycologicalForm = this.fb.group({
-      behaviordisorder: ['', Validators.required],
-      learningdisorder: ['', Validators.required],
-      attentiondeficit: ['', Validators.required],
-      depression: ['', Validators.required],
-      anxiety: ['', Validators.required],
-      eatingdisorder: ['', Validators.required],
-      phobia: ['', Validators.required],
-      videogame: ['', Validators.required],
-      internetaddiction: ['', Validators.required],
-      socialanxiety: ['', Validators.required],
-      schizophrenia: ['', Validators.required],
-      sleepdisorder: ['', Validators.required],
-      substanceabuse: ['', Validators.required],
-      delayinmenstruation: ['', Validators.required],
-      irregularperiods: ['', Validators.required],
-      painduringmenstruation: ['', Validators.required],
-      painorburning: ['', Validators.required],
+      behaviordisorder: [''],
+      learningdisorder: [''],
+      attentiondeficit: [''],
+      depression: [''],
+      anxiety: [''],
+      eatingdisorder: [''],
+      phobia: [''],
+      videogame: [''],
+      internetaddiction: [''],
+      socialanxiety: [''],
+      schizophrenia: [''],
+      sleepdisorder: [''],
+      substanceabuse: [''],
+      delayinmenstruation: [''],
+      irregularperiods: [''],
+      painduringmenstruation: [''],
+      painorburning: [''],
       advice: [''],
       remarks: ['']
 
@@ -46,6 +46,7 @@ export class PschycologicalComponent implements OnInit {
   }
 
   getData(): Pschycological {
+    this.model = {};
     const res = this.pschycologicalForm.controls;
     this.model.Behaviordisorder = res.behaviordisorder.value;
     this.model.Learningdisorder = res.learningdisorder.value;

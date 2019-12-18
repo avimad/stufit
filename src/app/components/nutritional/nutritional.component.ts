@@ -18,17 +18,17 @@ export class NutritionalComponent implements OnInit {
 
   createForm() {
     this.nutritionalassessmentForm = this.fb.group({
-      Select: ['', Validators.required],
-      vitamina: ['', Validators.required],
-      vitamind: ['', Validators.required],
-      obesity: ['', Validators.required],
-      idealbodyweight: ['', Validators.required],
-      idealcaloriesestimation: ['', Validators.required],
-      fats: ['', Validators.required],
-      cabohydrates: ['', Validators.required],
-      proteins: ['', Validators.required],
-      fluidestimation: ['', Validators.required],
-      glasses: ['', Validators.required],
+      Select: [''],
+      vitamina: [''],
+      vitamind: [''],
+      obesity: [''],
+      idealbodyweight: [''],
+      idealcaloriesestimation: [''],
+      fats: [''],
+      cabohydrates: [''],
+      proteins: [''],
+      fluidestimation: [''],
+      glasses: [''],
       advice: [''],
       remarks: ['']
     });
@@ -38,6 +38,7 @@ export class NutritionalComponent implements OnInit {
   }
 
   getData(): Nutritional {
+    this.model = {};
     const res = this.nutritionalassessmentForm.controls;
     this.model.Main = res.Select.value;
     this.model.Vitamina = res.vitamina.value;

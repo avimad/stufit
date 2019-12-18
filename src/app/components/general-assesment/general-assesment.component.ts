@@ -19,18 +19,18 @@ export class GeneralAssesmentComponent implements OnInit {
 
   createForm() {
     this.generalassessmentForm = this.fb.group({
-      chestauscultation: ['', Validators.required],
-      abdomenpalpitation: ['', Validators.required],
-      activeinfectious: ['', Validators.required],
-      cleftlip: ['', Validators.required],
-      clubfoot: ['', Validators.required],
-      congenitalcataract: ['', Validators.required],
-      congenitaldeafness: ['', Validators.required],
-      congenitalheart: ['', Validators.required],
-      skincondition: ['', Validators.required],
-      otitis: ['', Validators.required],
-      neuromotor: ['', Validators.required],
-      bodytype: ['', Validators.required],
+      chestauscultation: [''],
+      abdomenpalpitation: [''],
+      activeinfectious: [''],
+      cleftlip: [''],
+      clubfoot: [''],
+      congenitalcataract: [''],
+      congenitaldeafness: [''],
+      congenitalheart: [''],
+      skincondition: [''],
+      otitis: [''],
+      neuromotor: [''],
+      bodytype: [''],
       advice: [''],
       remarks: ['']
 
@@ -41,6 +41,7 @@ export class GeneralAssesmentComponent implements OnInit {
   }
 
   getData(): GeneralAssessment {
+    this.model = {};
     const res = this.generalassessmentForm.controls;
     this.model.Chestauscultation = res.chestauscultation.value;
     this.model.Abdomenpalpitation = res.abdomenpalpitation.value;

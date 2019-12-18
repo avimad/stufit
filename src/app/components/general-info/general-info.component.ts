@@ -20,17 +20,17 @@ export class GeneralInfoComponent implements OnInit {
 
   createForm() {
     this.generalForm = this.fb.group({
-      name: ['', Validators.required],
-      stufitId: ['', Validators.required],
-      mothername: ['', Validators.required],
-      fathername: ['', Validators.required],
-      dob: ['', Validators.required],
-      class: ['', Validators.required],
-      bloodgroup: ['', Validators.required],
-      address: ['', Validators.required],
-      email: ['', Validators.required],
-      contactno: ['', Validators.required],
-      fathercontact: ['', Validators.required],
+      name: [''],
+      stufitId: [''],
+      mothername: [''],
+      fathername: [''],
+      dob: [''],
+      class: [''],
+      bloodgroup: [''],
+      address: [''],
+      email: [''],
+      contactno: [''],
+      fathercontact: [''],
       mothercontact: [''],
       sibling1: [''],
       sibling1class: [''],
@@ -43,6 +43,7 @@ export class GeneralInfoComponent implements OnInit {
   }
 
   getData(): GeneralInfo {
+    this.model = {};
     const res = this.generalForm.controls;
     this.model.Name = res.name.value;
     this.model.Address = res.address.value;

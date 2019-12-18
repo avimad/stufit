@@ -18,29 +18,29 @@ export class EyevisionComponent implements OnInit {
   }
   createForm() {
     this.eyevisionForm = this.fb.group({
-      visionlteye: ['', Validators.required],
-      visionrteye: ['', Validators.required],
+      visionlteye: [''],
+      visionrteye: [''],
       visionremark: [''],
-      refractionlteye: ['', Validators.required],
-      refractionrteye: ['', Validators.required],
+      refractionlteye: [''],
+      refractionrteye: [''],
       refractionremark: [''],
-      colourvisionlteye: ['', Validators.required],
-      colourvisionrteye: ['', Validators.required],
+      colourvisionlteye: [''],
+      colourvisionrteye: [''],
       colourvisionremark: [''],
-      diseaselteye: ['', Validators.required],
+      diseaselteye: [''],
       diseaserteye: [''],
-      diseaseremark: ['', Validators.required],
-      squintlteye: ['', Validators.required],
-      squintrteye: ['', Validators.required],
+      diseaseremark: [''],
+      squintlteye: [''],
+      squintrteye: [''],
       squintremark: [''],
-      microeyeballlteye: ['', Validators.required],
-      microeyeballrteye: ['', Validators.required],
+      microeyeballlteye: [''],
+      microeyeballrteye: [''],
       microeyeballremark: [''],
-      ptosislteye: ['', Validators.required],
-      ptosisrteye: ['', Validators.required],
+      ptosislteye: [''],
+      ptosisrteye: [''],
       ptosisremark: [''],
-      nystgmuslteye: ['', Validators.required],
-      nystgmusrteye: ['', Validators.required],
+      nystgmuslteye: [''],
+      nystgmusrteye: [''],
       nystgmusremark: [''],
 
       advice: [''],
@@ -52,6 +52,7 @@ export class EyevisionComponent implements OnInit {
   }
 
   getData(): EyeVision {
+    this.model = {};
     const res = this.eyevisionForm.controls;
     this.model.Visionlteye = res.visionlteye.value;
     this.model.Visionrteye = res.visionrteye.value;
